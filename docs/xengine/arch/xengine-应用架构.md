@@ -1,4 +1,5 @@
 ## 概述
+
 为适应需求的快速变化, 节省开发成本. 
 通用的技术功能将以逐步组件化下沉到引擎集成.
 整体架构将基于 native + SPA(h5).
@@ -94,34 +95,3 @@ header 用原生的做,这样, 可以一定程度上提高用户体验, 如果�
 白名单配置在服务器上。在下载离线包时，读入配置。
 
 配置做签名，防止篡改。
-
-
-
-
-## 质量控制
-
-### 兼容性测试
-
-使用岩鼠平台(付费): https://yanshu.effirst.com/product/real-devices/overview
-
-可在引擎 ship 前,对市面上的常用机型做兼容性测试.
-
-### 性能测试
-
-dokit http://xingyun.xiaojukeji.com/docs/dokit/#/intro
-
-xcode 自带 instrument
-
-* 重点: 内存加载
-
-### 线上错误日志管理
-
-native 错误可以使用市面上成熟的方案,如 bugly, 友盟.
-
-h5 相关错误. 可使用 sentry 自行搭建. 也可使用成熟方案(未研究).
-
-*reference*
-
-android virtualAPK: https://didi.github.io/virtual-apk.html
-
-
