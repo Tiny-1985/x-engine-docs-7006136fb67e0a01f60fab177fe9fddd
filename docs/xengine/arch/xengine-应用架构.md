@@ -120,26 +120,6 @@ native 错误可以使用市面上成熟的方案,如 bugly, 友盟.
 
 h5 相关错误. 可使用 sentry 自行搭建. 也可使用成熟方案(未研究).
 
-## 版本 
-### 1.0 
-
-* [x] 统一 header。
-* [x] 统一网络。
-    * [ ] 网络白名单。
-* [x] 基于离线包。
-    * [ ] 差分包。
-* [ ] 组件标准。
-    * [ ] android /iOS / h5
-* [ ] 组件文档 - docsify。
-* [ ] 业务模板 h5 标准范式。
-
-### x.0 
-* 支持 DSL 语言发布多端.
-* 支持发布 web 版.
-* 组件模块动态化. (可选)
-* 提升安全性
-
-
 *reference*
 
 android virtualAPK: https://didi.github.io/virtual-apk.html
