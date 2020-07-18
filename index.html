@@ -10,19 +10,28 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+<style>
+  .app-nav{
+         background: white;
+         position: fixed;
+         top: 0;
+         border-radius:10px;
+     }
+</style>
   </head>
-
   <body>
-    add soemthing here
     <div id="app"></div>
     <!-- docsify-edit-on-github -->
     <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
     <script>
       window.$docsify = {
-        name: "docsify-demo",
-        repo: "https://github.com/Snailclimb/JavaGuide-Interview",
+        name: "x-engine 文档",
+        repo: "https://github.com/zk4/x-engine-docs",
+				alias: {
+					'/.*/_navbar.md': '/_navbar.md',
+        },
         maxLevel: 2, //最大支持渲染的标题层级
-        subMaxLevel: 2,
+        subMaxLevel: 3,
         homepage: "README.md",
         coverpage: false,
         loadSidebar: true,
@@ -38,9 +47,9 @@
           depth: 3,
         },
         plugins: [
-          EditOnGithubPlugin.create(
-            "https://github.com/zk4/x-engine-docs/blob/master/"
-          ),
+//          EditOnGithubPlugin.create(
+//            "https://github.com/zk4/x-engine-docs/blob/master/"
+//          ),
           function (hook, vm) {
             hook.afterEach(function (html) {
               var url =
@@ -59,6 +68,9 @@
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <!--Java代码高亮-->
     <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-sql.js"></script>
     <!--全文搜索,直接用官方提供的无法生效-->
     <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
     <!-- 复制到剪贴板 -->
@@ -67,5 +79,6 @@
     <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
     <!-- 字数统计 -->
     <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   </body>
 </html>
