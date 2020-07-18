@@ -25,7 +25,7 @@
     <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
     <script>
       window.$docsify = {
-        name: "x-engine 文档",
+        name: "x-engine",
         repo: "https://github.com/zk4/x-engine-docs",
 				alias: {
 					'/.*/_navbar.md': '/_navbar.md',
@@ -51,6 +51,10 @@
 //            "https://github.com/zk4/x-engine-docs/blob/master/"
 //          ),
           function (hook, vm) {
+             hook.doneEach(function() {
+              // document.getElementsByClassName('collapse')[0].classList.remove('collapse');
+            });
+
             hook.afterEach(function (html) {
               var url =
                 "//github.com/zk4/x-engine-docs/tree/master/" + vm.route.file;
