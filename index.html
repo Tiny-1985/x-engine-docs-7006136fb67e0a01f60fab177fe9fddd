@@ -10,65 +10,78 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
-<style>
-  .app-nav{
-         background: white;
-         position: fixed;
-         top: 0;
-         border-radius:10px;
-     }
-
-</style>
+    <style>
+  figure {
+      text-align: center
+  }
+      .app-nav {
+        background: white;
+        position: fixed;
+        top: 0;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
     <!-- docsify-edit-on-github -->
     <!--<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>-->
     <script>
-      window.$docsify = {
-        name: "x-engine",
-        repo: "https://github.com/zk4/x-engine-docs-7006136fb67e0a01f60fab177fe9fddd",
-				alias: {
-					'/.*/_navbar.md': '/_navbar.md',
-        },
-        maxLevel: 3, //最大支持渲染的标题层级
-        subMaxLevel: 3,
-        homepage: "README.md",
-        coverpage: false,
-        loadSidebar: true,
-        loadNavbar: true,
-        auto2top: true, //切换页面后是否自动跳转到页面顶部
-        //全文搜索
-        search: {
-          //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-          paths: "auto",
-          placeholder: "搜索",
-          noData: "找不到结果",
-          // 搜索标题的最大程级, 1 - 6
-          depth: 3,
-        },
-        plugins: [
-//          EditOnGithubPlugin.create(
-//            "https://github.com/zk4/x-engine-docs/blob/master/"
-//          ),
-          function (hook, vm) {
-             hook.doneEach(function() {
-              // document.getElementsByClassName('collapse')[0].classList.remove('collapse');
-            });
+            window.$docsify = {
+              name: "x-engine",
+              repo: "https://github.com/zk4/x-engine-docs-7006136fb67e0a01f60fab177fe9fddd",
+      				alias: {
+      					'/.*/_navbar.md': '/_navbar.md',
+              },
+              maxLevel: 3, //最大支持渲染的标题层级
+              subMaxLevel: 3,
+              homepage: "README.md",
+              coverpage: false,
+              loadSidebar: true,
+              loadNavbar: true,
+              auto2top: true, //切换页面后是否自动跳转到页面顶部
+                     markdown: {
+                  renderer: {
+                      image: function(href, title, text) {
+                          // 按照原来的渲染 img
+                          var image_html = this.origin.image.apply(this, arguments)
+                          // 用 figure 包一下图片，实现居中
+                          return '<figure>' + image_html + '<figcaption>' + text +
+                              '</figcaption></figure>'
+                      }
+                  }
+              },
+              //全文搜索
+              search: {
+                //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+                paths: "auto",
+                placeholder: "搜索",
+                noData: "找不到结果",
+                // 搜索标题的最大程级, 1 - 6
+                depth: 3,
+              },
+              plugins: [
+      //          EditOnGithubPlugin.create(
+      //            "https://github.com/zk4/x-engine-docs/blob/master/"
+      //          ),
+                function (hook, vm) {
+                   hook.doneEach(function() {
+                    // document.getElementsByClassName('collapse')[0].classList.remove('collapse');
+                  });
 
-            hook.afterEach(function (html) {
-              var url =
-                "//github.com/zk4/x-engine-docs/tree/master/" + vm.route.file;
-              return (
-                html +
-                "<hr align=center color=#987cb9 size=1>发现错误？想参与编辑？<a href=" +
-                url +
-                " target=_blank>在 GitHub 上编辑此页面！</a>"
-              );
-            });
-          },
-        ],
-      };
+                  hook.afterEach(function (html) {
+                    var url =
+                      "//github.com/zk4/x-engine-docs/tree/master/" + vm.route.file;
+                    return (
+                      html +
+                      "<hr align=center color=#987cb9 size=1>发现错误？想参与编辑？<a href=" +
+                      url +
+                      " target=_blank>在 GitHub 上编辑此页面！</a>"
+                    );
+                  });
+                },
+              ],
+            };
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <!--Java代码高亮-->
