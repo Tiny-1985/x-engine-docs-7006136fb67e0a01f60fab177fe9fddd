@@ -12,7 +12,7 @@
   - [离线包](./docs/microApp/微应用-离线服务器.md)
 - **业务**
   - [从 0 开发](./docs/business/业务开发.md)
-  - [集成开发](./docs/business/集成开发.md)
+  - [集成引擎](./docs/business/集成开发.md)
   - [组件使用](./docs/modules/组件-使用.md)
   - [微应用集成](./docs/microApp/微应用-集成.md)
 - **工程管理**
