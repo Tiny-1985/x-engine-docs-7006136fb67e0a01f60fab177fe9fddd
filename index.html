@@ -28,6 +28,9 @@
     <!--<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>-->
     <script>
       window.$docsify = {
+        remoteMarkdown: {
+          tag: "customTag",
+        },
         name: "x-engine",
         repo:
           "https://github.com/zk4/x-engine-docs-7006136fb67e0a01f60fab177fe9fddd",
@@ -59,16 +62,16 @@
         },
         //全文搜索
         search: {
-          maxAge: 60*1000, // 过期时间，单位毫秒，
+          maxAge: 60 * 1000, // 过期时间，单位毫秒，
           paths: "auto",
           placeholder: "搜索",
           noData: "找不到结果",
           // 搜索标题的最大程级, 1 - 6
           depth: 3,
-           search : [
-          '/',            // => /README.md
-          '/docs',            
-        ],
+          search: [
+            "/", // => /README.md
+            "/docs",
+          ],
         },
         plugins: [
           //          EditOnGithubPlugin.create(
@@ -81,7 +84,8 @@
 
             hook.afterEach(function (html) {
               var url =
-                "//github.com/zk4/x-engine-docs-7006136fb67e0a01f60fab177fe9fddd/tree/master/" + vm.route.file;
+                "//github.com/zk4/x-engine-docs-7006136fb67e0a01f60fab177fe9fddd/tree/master/" +
+                vm.route.file;
               return (
                 html +
                 "<hr align=center color=#987cb9 size=1> <a href=" +
@@ -108,5 +112,8 @@
     <!-- 字数统计 -->
     <!--<script src="//unpkg.com/docsify-count/dist/countable.js"></script>-->
     <!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>-->
+
+    <!--remote markdown-->
+    <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
   </body>
 </html>

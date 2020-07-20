@@ -1,2 +1,2 @@
-  - [统一网络](./docs/modules/optional/组件-支付宝.md)
-  - [原生导航](./docs/modules/optional/组件-百度地图.md)
+  - [蓝牙](./docs/modules/optional/组件-蓝牙.md)
+  - [百度地图](./docs/modules/optional/组件-百度地图.md)
