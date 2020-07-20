@@ -12,7 +12,9 @@
 }
 ```
 
-## modules.json
+## module.json
+
+在开发组件模板时的配置文件, 定义了
 
 ``` json
 {
@@ -20,20 +22,12 @@
   "name":"蓝牙",
   "tag": "1.0.0",
   "engine_version": "0.0.1",
-  "mini_platform":{
+  "minimal_os_version":{
 		"ios": "11.1.0",
   	"android_api": 20,
-	},
-	"exclude_brand":[
-    {
-      "brand_name":"华为",
-      "device_id":"ry-10"
-    }
-  ]
+	} 
 }
 ```
-
-
 
 
 
