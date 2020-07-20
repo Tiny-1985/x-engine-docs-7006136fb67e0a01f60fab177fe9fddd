@@ -20,6 +20,5 @@
   - [TODO 计划](./docs/versionlize/TODO-计划.md)
   - [质量控制](./docs/versionlize/质量控制.md)
   - [版本管理](./docs/versionlize/引擎与组件版本管理.md)
-  - [hello](./docs/versionlize/hello.md)
 
 
