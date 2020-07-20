@@ -19,6 +19,7 @@
   - [TODO 计划](./docs/versionlize/TODO-计划.md)
   - [质量控制](./docs/versionlize/质量控制.md)
   - [版本管理](./docs/versionlize/引擎与组件版本管理.md)
-  - [**配置文件**](./docs/configfile/config.md)
+  - [模板管理](./docs/versionlize/模板管理.md)
+  - [配置文件](./docs/configfile/config.md)
 
 
