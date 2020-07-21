@@ -5,7 +5,7 @@
   "appId": "com.zkty.xiaoqu",    // 建议直接设置为应用的 Bundle Identifier
   "appSecret": "8b387ca3ebdd412e9c97ef81ed352ee7",  //随机 md5 值.
   "offlineServerUrl": "https://3rd-public-file.oss-cn-beijing.aliyuncs.com"  //服务器地址,
-  "moduels":[
+  "modules":[
   	{
   		... //module.json
 		}
@@ -80,3 +80,4 @@ moduels 里包含了所有的组件配置，见下面 module.json
         ]
   }
 ```
+
