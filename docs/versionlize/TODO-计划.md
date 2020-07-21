@@ -1,10 +1,13 @@
 ### 1.0 
-
+worktile: https://zktyfe.worktile.com/tasks/projects/5f164ffa478dbd1d67107712
 * [x] 文档统一管理
 * [x] 统一 header
 * [x] 统一网络
 * [x] 基于离线包
 * [ ] 业务模板
+    * [ ] npm 
+    * [ ] cocoapod 
+    * [ ] maven
 * [x] 组件模板
     * [ ] android 
     * [x] iOS 
