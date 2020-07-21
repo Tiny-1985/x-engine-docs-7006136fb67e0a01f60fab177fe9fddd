@@ -39,10 +39,17 @@ moduels 里包含了所有的组件配置，见下面 module.json
 	} 
 }
 ```
+module_id 定义 `<厂商名>.<namespace>`
 
-在将以上  json 放入 xengine_config.json 时, 引擎必须做以下校验:
+比如厂商为 `com.zkty` 
+
+`namespace` 为 `bluetooth`
 
 
+
+
+
+在将以上 json 放入 `xengine_config.json` 时, 引擎必须做以下校验:
 
 在开发时, 引擎版本是否大于 engine_version?
 
