@@ -8,7 +8,7 @@
     - [通用组件](./docs/modules/common/组件-统一网络.md)
     - [可选组件](./docs/modules/optional/组件-蓝牙.md)
 - **微应用**
-  - [开发](./docs/microApp/微应用-开发规范.md)
+  - [开发](./docs/microApp/微应用.md)
   - [离线包](./docs/microApp/微应用-离线服务器.md)
 - **业务**
   - [从 0 开发](./docs/business/业务开发.md)
