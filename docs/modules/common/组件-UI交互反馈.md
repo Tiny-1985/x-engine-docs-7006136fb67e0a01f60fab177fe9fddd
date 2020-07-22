@@ -23,11 +23,14 @@
 
 ## API 例表
 
-### xengine.ui.showLoading(Object)
+### showLoading
 
 - 显示 loading 提示框.
 - 需主动调用 `xengine.ui.hideLoading`才能关闭提示框.
 - 默认时间2000ms.
+
+- 函数声明
+  - ui.showLoading()
 
 **示例**	
 
@@ -42,9 +45,11 @@ xengine.ui.hideLoading();// 隐藏提示框
 
 
 
-### xengine.ui.showModel(Object)
+### showModal
 
 - 显示模态弹窗，类似于标准 html 的消息框：alert、confirm。
+- 函数声明
+  - ui.showModal(Object)
 
 **Object参数说明**	
 
@@ -72,9 +77,11 @@ xengine.ui.showModal({
 
 
 
-### xengine.ui.showActionSheet(Object)
+### showActionSheet
 
 - 显示操作菜单
+- 函数声明
+  - ui.showActionSheet(Object)
 
 **Object参数说明**	
 
@@ -102,9 +109,11 @@ xengine.ui.showActionSheet({
 
 
 
-### xengine.ui.showToast(Object)
+### showToast
 
 - 显示消息提示框。
+- 函数声明
+  - ui.showToast(Object)
 
 **Object参数说明**		
 
