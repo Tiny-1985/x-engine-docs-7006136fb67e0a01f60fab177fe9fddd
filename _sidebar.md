@@ -8,17 +8,18 @@
     - [通用组件](./docs/modules/common/组件-统一网络.md)
     - [可选组件](./docs/modules/optional/组件-蓝牙.md)
 - **微应用**
-  - [开发](./docs/microApp/微应用-开发规范.md)
+  - [开发](./docs/microApp/微应用.md)
   - [离线包](./docs/microApp/微应用-离线服务器.md)
 - **业务**
   - [从 0 开发](./docs/business/业务开发.md)
-  - [集成开发](./docs/business/集成开发.md)
+  - [集成引擎](./docs/business/集成开发.md)
   - [组件使用](./docs/modules/组件-使用.md)
   - [微应用集成](./docs/microApp/微应用-集成.md)
 - **工程管理**
   - [TODO 计划](./docs/versionlize/TODO-计划.md)
   - [质量控制](./docs/versionlize/质量控制.md)
   - [版本管理](./docs/versionlize/引擎与组件版本管理.md)
+  - [版本冲突与解决方案](./docs/versionlize/版本冲突与解决方案.md)
   - [模板管理](./docs/versionlize/模板管理.md)
   - [配置文件](./docs/configfile/config.md)
 
