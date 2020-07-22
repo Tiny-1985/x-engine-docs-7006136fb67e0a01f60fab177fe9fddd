@@ -7,7 +7,16 @@
   "offlineServerUrl": "https://3rd-public-file.oss-cn-beijing.aliyuncs.com"  //服务器地址,
   "modules":[
   	{
-  		... //module.json
+  		"module_id":"com.zkty.ui",
+  		"name":"ui",
+  		"tag": "1.0.0",
+ 			"engine_version": "0.0.1",
+  		"minimal_os_version":
+  			{
+					"ios": "11.1.0",
+  				"android_api": 20
+				} 
+  
 		}
   ]
 }
@@ -69,22 +78,36 @@ module_id 定义 `<厂商名>.<namespace>`
 
 ``` json
 {
-  "code":0,
-  "version":3,     // microApps.json 版本标识
-  "forceUpdate" true,  // 是否强制更新
-  "data":
-        [
+"msg": "success",
+"code": 0,
+"data":{
+    "code":0,
+    "version":8,
+    "forceUpdate": 0,
+    "data":[
           {
+              
             "microAppName":"开门",
-            "microAppId":"com.zkty.xiaoqu.opendoor",
+            "microAppId":"com.zkty.test",
+            "microAppVersion":1
+          },
+          {
+            "microAppName":"物业",
+            "microAppId":"com.zkty.xiaoqu.realstate",
             "microAppVersion":2
           },
           {
             "microAppName":"物业",
-            "microAppId":"com.zkty.xiaoqu.realstate"
+            "microAppId":"com.zkty.xiaoqu.network",
             "microAppVersion":1
+          },
+          {
+            "microAppName":"物业",
+            "microAppId":"com.zkty.xiaoqu.lj",
+            "microAppVersion":4
           }
         ]
-  }
+    }
+}
 ```
 
