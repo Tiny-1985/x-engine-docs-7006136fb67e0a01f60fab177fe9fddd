@@ -8,7 +8,7 @@
 
 ```json
 {
-  "module_id":"com.zkty.net",
+  "module_id":"com.zkty.ui",
   "name":"UI",
   "tag": "1.0.0",
   "engine_version": "0.0.1",
