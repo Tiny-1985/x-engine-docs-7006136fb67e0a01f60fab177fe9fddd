@@ -4,3 +4,4 @@ default:
 
 install_docsify:
 	npm install -g docsify_cli
+
