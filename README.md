@@ -4,7 +4,7 @@
   <div class="book">
     <img
       alt="x-engine hybrid"
-      src="/face.jpg"
+      src="/assets/face.jpg"
       />
   </div>
 </a>
