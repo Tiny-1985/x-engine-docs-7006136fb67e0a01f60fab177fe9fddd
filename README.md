@@ -1,14 +1,11 @@
 
 # x-engine 简介
-<html>
-  <div class="book">
-    <img
-      alt="x-engine hybrid"
-      src="/assets/face.jpg"
-      />
-  </div>
-</a>
-</html>
+<!--<html>-->
+  <!--<div class="book">-->
+   <!--[]("/assets/face.jpg")-->
+  <!--</div>-->
+<!--</a>-->
+<!--</html>-->
 
 x-engine 为开发人员提供了一套完善的解决方案. 涉及业务,组件开发,版本管理,发布
 # 特色
