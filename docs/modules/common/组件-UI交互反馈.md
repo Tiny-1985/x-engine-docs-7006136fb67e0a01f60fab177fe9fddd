@@ -21,6 +21,12 @@
 
 
 
+
+
+---
+
+
+
 ## API 例表
 
 ### showLoading
@@ -49,6 +55,10 @@ xengine.ui.showLoading({
   title:'加载中'
 });
 ```
+
+
+
+---
 
 
 
@@ -227,6 +237,25 @@ xengine.ui.showToast({
   }
 })
 ```
+
+
+
+---
+
+
+### hideToast
+
+- 消息提示框。
+- 函数声明
+  - ui.hideToast()
+
+**示例**	
+
+```javascript
+xengine.ui.hideToast();
+```
+
+
 
 
 
