@@ -1,6 +1,6 @@
 # 组件 - UI交互反馈
 
-- 在引擎中, 我们为您提供了一系列的原生(iOS, Android)提示, 一定程度上提高用户体验, 让使用更为流畅。
+- 我们为您提供了一系列的原生(iOS, Android)提示, 一定程度上提高用户体验, 让您更高的还原原生效果,使用更流畅。
 
 
 
@@ -8,13 +8,13 @@
 
 ```json
 {
-  "module_id":"com.zkty.ui",
+  "module_id":"com.zkty.module.ui",
   "name":"UI",
   "tag": "1.0.0",
-  "engine_version": "0.0.1",
+  "engine_version": "1.0.0",
   "minimal_os_version":{
-    "ios": "11.1.0",
-    "android_api": 20,
+    "ios": "1.0.0",
+    "android_api": '1.0.0',
   }
 }
 ```
@@ -26,20 +26,109 @@
 ### showLoading
 
 - 显示 loading 提示框.
+
 - 需主动调用 `xengine.ui.hideLoading`才能关闭提示框.
+
 - 默认时间2000ms.
 
 - 函数声明
-  - ui.showLoading()
+  
+  - ui.showLoading(Object)
+  
+
+**Object参数说明**	
+
+| 参数  |  类型  | 必填 | 默认值 |
+| :---: | :----: | :--: | :----: |
+| title | string |  是  |  ---   |
 
 **示例**	
 
 ```javascript
-xengine.ui.showLoading();// 显示提示框
-xengine.ui.hideLoading();// 隐藏提示框
+xengine.ui.showLoading({
+  title:'加载中'
+});
 ```
 
- 
+
+
+### hideLoading
+
+- 隐藏loading提示框
+- 函数声明
+  - ui.hideLoading()
+
+**示例**
+
+```javascript
+xengine.ui.showLoading(
+	title:'加载中'
+);
+
+--------------
+
+setTimeout(function () {
+	xengine.ui.hideLoading();
+}, 2000);
+```
+
+
+---
+
+
+
+### showActionSheet
+
+- 显示操作菜单
+- 函数声明
+  
+  - ui.showActionSheet(Object)
+  
+  
+
+**Object参数说明**	
+
+|   参数   |     类型      | 必填 | 默认值 |           说明           |
+| :------: | :-----------: | :--: | :----: | :----------------------: |
+| itemList | Array<string> |  是  |  ---   | 按钮的文字数组,最大长度6 |
+|  title   |    string     |  否  |  ---   |        提示的标题        |
+| content  |    string     |  否  |  ---   |        提示的内容        |
+| success  |   Function    |  否  |  ---   |  接口调用成功的回调函数  |
+|   fail   |   Function    |  否  |  ---   |  接口调用失败的回调函数  |
+
+**success返回参数说明**
+
+| 参数     | 类型   | 说明                                |
+| -------- | ------ | ----------------------------------- |
+| tapIndex | Number | 用户点击的按钮,从上到下顺序,从0开始 |
+
+**示例**	
+
+```javascript
+// success / fail
+xengine.ui.showActionSheet({
+  itemList: ['A', 'B', 'C', 'D', 'E'],
+  success: function (res) {
+		console.log(res)
+  },
+  fail: function (error) {
+		console.log(error)
+  }
+})
+
+--------------
+
+// promise方式
+xengine.ui.showActionSheet({
+  itemList: ['A', 'B', 'C', 'D', 'E'],
+}).then((res) => {
+	console.log(res)
+}).catch((error) => {
+	console.log(error)
+})
+```
+
+
 
 ---
 
@@ -55,55 +144,45 @@ xengine.ui.hideLoading();// 隐藏提示框
 
 |    参数    |   类型   | 必填 | 默认值 |          说明          |
 | :--------: | :------: | :--: | :----: | :--------------------: |
-|   title    |  string  |  否  |  ---   |       提示的标题       |
-|  content   |  string  |  否  |  ---   |       提示的内容       |
+|   title    |  String  |  是  |  ---   |       提示的标题       |
+|  content   |  String  |  否  |  ---   |       提示的内容       |
 | showCancel | Boolean  |  否  |  true  |    是否显示取消按钮    |
 |  success   | Function |  否  |  ---   | 接口调用成功的回调函数 |
 |    fail    | Function |  否  |  ---   | 接口调用失败的回调函数 |
 
+
+
+**success返回参数说明**
+
+| 参数     | 类型   | 说明                 |
+| -------- | ------ | -------------------- |
+| tapIndex | Number | 取消返回0, 确定返回1 |
+
 **示例**	
 
 ```javascript
+// success / fail
 xengine.ui.showModal({ 
-  title: "title", 
-  content: "content", 
-  showCancel: 'true'  // 显示取消按钮
-});
-```
-
-
-
----
-
-
-
-### showActionSheet
-
-- 显示操作菜单
-- 函数声明
-  - ui.showActionSheet(Object)
-
-**Object参数说明**	
-
-|   参数   |     类型      | 必填 | 默认值 |           说明           |
-| :------: | :-----------: | :--: | :----: | :----------------------: |
-| itemList | Array<string> |  是  |  ---   | 按钮的文字数组,最大长度6 |
-|  title   |    string     |  否  |  ---   |        提示的标题        |
-| content  |    string     |  否  |  ---   |        提示的内容        |
-| success  |   Function    |  否  |  ---   |  接口调用成功的回调函数  |
-|   fail   |   Function    |  否  |  ---   |  接口调用失败的回调函数  |
-
-**示例**	
-
-```javascript
-xengine.ui.showActionSheet({ 
   title: 'title',
-  content: 'content',
-  itemList : ['测试1','测试2','测试3','测试4','测试5']
-}); 
+  success: function (res) {
+    console.log(res)
+  },
+  fail: function (error) {
+		console.log(error)
+  }  
+})
+
+--------------
+
+// promise
+xengine.ui.showModal({
+  title: 'title' 
+}).then((res) => {
+	console.log(res)
+}).catch((error) => {
+	console.log(error)
+})
 ```
-
-
 
 ---
 
@@ -117,97 +196,38 @@ xengine.ui.showActionSheet({
 
 **Object参数说明**		
 
-|   参数   |  类型  | 必填 | 默认值 | 说明 |
-| :------: | :----: | :--: | :----: | :--: |
-|  title   | string | ---- |  ----  | ---- |
-| duration | number | ---- |  2000  | ---- |
+|   参数   |   类型   | 必填 | 默认值 |            说明             |
+| :------: | :------: | :--: | :----: | :-------------------------: |
+|  title   |  String  |  是  |  ----  |         提示的标题          |
+| duration |  number  |  否  |  2000  | 提示的延迟时间.默认：1500ms |
+|   icon   |  String  |  否  |  ---   |    图标,有效值见下方说明    |
+| success  | Function |  否  |  ---   |      接口成功回调函数       |
+|   fail   | Function |  否  |  ---   |      接口失败回调函数       |
+
+**icon值说明**
+
+| 参数    | 说明         |
+| ------- | ------------ |
+| success | 显示成功图标 |
+| loading | 显示加载图标 |
+| none    | 不显示图标   |
 
 **示例**	
 
 ```javascript
 xengine.ui.showToast({
-  title: 'toast' 
-});
-xengine.ui.showSuccessToast({
-  title:"成功"
-});
-xengine.ui.showFailToast({
-  title:"失败"
-});
-```
-
-
-
-
-
-待添加..............
-
-
-
-
-
-
-
-
-
-### 文档示例
-
-- 以actionSheet为例
-
-```json
-{
-  ...
-  "modules":[
-    {
-      "module_id":"com.zkty.ui",
-      "name":"UI",
-      "tag": "1.0.0",
-      "engine_version": "1.0.0",
-      "minimal_os_version":{
-        "ios": "11.1.0",
-        "android_api": 20
-    }  
-  }
-}
-```
-
-
-
-### showActionSheet
-
-- 显示操作菜单
-
-- 函数声明
-
-- ui.showActionSheet(Object)
-
-
-
-**Object参数说明**  
-
-|   参数   |     类型      | 必填 | 默认值 |           说明           |
-
-| :------: | :-----------: | :--: | :----: | :----------------------: |
-
-| itemList | Array<string> |  是  |  ---   | 按钮的文字数组,最大长度6 |
-
-|  title   |    string     |  否  |  ---   |        提示的标题        |
-
-| content  |    string     |  否  |  ---   |        提示的内容        |
-
-| success  |   Function    |  否  |  ---   |  接口调用成功的回调函数  |
-
-|   fail   |   Function    |  否  |  ---   |  接口调用失败的回调函数  |
-
-
-
-- 示例
-
-```javascript
-xengine.ui.showActionSheet({ 
   title: 'title',
-  content: 'content',
-  itemList : ['测试1','测试2','测试3','测试4','测试5']
-});
+  icon: 'success',
+  duration: '2000',
+  success: (res) => {
+    alert(res);
+  },
+  fail: (error) => {
+    alert(error); 
+  }
+})
 ```
 
+
+
+待续...........
