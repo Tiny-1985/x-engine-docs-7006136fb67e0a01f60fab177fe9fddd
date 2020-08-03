@@ -1,1 +1,0 @@
-[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-bluetooth/master/README.md?token=AAHTKQR3MB2FAWDNWYNV7SS7D2CXS)

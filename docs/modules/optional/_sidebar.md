@@ -1,2 +1,0 @@
-  - [bluetooth](./docs/modules/optional/组件-bluetooth.md)
-  - [map-baidu](./docs/modules/optional/组件-map-baidu.md)
