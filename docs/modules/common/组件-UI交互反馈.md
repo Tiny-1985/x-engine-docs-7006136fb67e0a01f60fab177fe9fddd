@@ -5,7 +5,6 @@
 
 
 ### moudle.json
-
 ```json
 {
   "module_id":"com.zkty.module.ui",
