@@ -1,63 +1,15 @@
-# 原生导航
+[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-nav/master/README.md)
 
-header 用原生的做,这样, 可以一定程度上提高用户体验, 如果页面无响应, 用户可以返回. 不至于只能杀死进程.
+# h5 (JS api)
 
-注意: 新的路由地址必须唯一.
+[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-nav/master/h5/README.md)
 
+# iOS
 
-
-
-![2020-07-13 22.34.15](././assets/c7be7afb-5977-4051-a7fb-723bc3c9eb27.gif ':size=20%')
-
-## module.json
-
-```
-{
-  "module_id":"com.zkty.navigator",
-  "name":"导航的",
-  "tag": "1.0.0",
-  "engine_version": "0.0.1",
-  "minimal_os_version":{
-    "ios": "11.1.0",
-    "android_api": 20,
-  }
-}
-```
-
-## API 例表
-
-### 
-
-### navigator
-
-- 页面跳转
-- 函数声明
-  - navigator.push(Object)
-
-**Object参数说明**	
-
-|  参数  |  类型  | 必填 | 默认值 |             说明              |
-| :----: | :----: | :--: | :----: | :---------------------------: |
-|  url   | string |  是  |  ---   |           跳转的url           |
-| params | string |  否  |  ---   |        跳转携带的参数         |
-| title  | string |  否  |  ---   | 跳转的页面的导航栏头部的title |
-|        |        |      |        |                               |
-|        |        |      |        |                               |
-
-**示例**	
-
-```javascript
-xengine.navigator.push({ 
-  url: "/b", 
-	title: 'b页面'
-  params: {   // 示例参数仅供参考。
-  	id: 1
-	  target : 'a'
-	}
-});
-```
+[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-nav/master/iOS/README.md)
 
 
 
+# android
 
-
+[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-nav/master/android/README.md)
