@@ -71,12 +71,12 @@ xengine.ui.showLoading({
 **示例**
 
 ```javascript
-xengine.ui.showLoading(
-	title:'加载中'
-);
+xengine.ui.showLoading({
+  title:'加载中'
+});
   
 setTimeout(function () {
-	xengine.ui.hideLoading();
+  xengine.ui.hideLoading();
 }, 2000);
 ```
 
@@ -117,10 +117,10 @@ setTimeout(function () {
 xengine.ui.showActionSheet({
   itemList: ['A', 'B', 'C', 'D', 'E'],
   success: function (res) {
-		console.log(res)
+    console.log(res)
   },
   fail: function (error) {
-		console.log(error)
+    console.log(error)
   }
 })
 
@@ -130,9 +130,9 @@ xengine.ui.showActionSheet({
 xengine.ui.showActionSheet({
   itemList: ['A', 'B', 'C', 'D', 'E'],
 }).then((res) => {
-	console.log(res)
+  console.log(res)
 }).catch((error) => {
-	console.log(error)
+  console.log(error)
 })
 ```
 
@@ -176,7 +176,7 @@ xengine.ui.showModal({
     console.log(res)
   },
   fail: function (error) {
-		console.log(error)
+    console.log(error)
   }  
 })
 
@@ -186,9 +186,9 @@ xengine.ui.showModal({
 xengine.ui.showModal({
   title: 'title' 
 }).then((res) => {
-	console.log(res)
+  console.log(res)
 }).catch((error) => {
-	console.log(error)
+  console.log(error)
 })
 ```
 
@@ -207,7 +207,7 @@ xengine.ui.showModal({
 |   参数   |   类型   | 必填 | 默认值 |            说明             |
 | :------: | :------: | :--: | :----: | :-------------------------: |
 |  title   |  String  |  是  |  ----  |         提示的标题          |
-| duration |  number  |  否  |  2000  | 提示的延迟时间.默认：1500ms |
+| duration |  number  |  否  |  2000  | 提示的延迟时间.默认：2000ms |
 |   icon   |  String  |  否  |  ---   |    图标,有效值见下方说明    |
 | success  | Function |  否  |  ---   |      接口成功回调函数       |
 |   fail   | Function |  否  |  ---   |      接口失败回调函数       |
