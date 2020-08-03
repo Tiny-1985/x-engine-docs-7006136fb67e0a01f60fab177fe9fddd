@@ -5,8 +5,8 @@
   - [升级](./docs/modules/组件-升级.md)
   - 组件仓库
     - [私地址](./docs/modules/组件-仓库.md)
-    - [通用组件](./docs/modules/common/组件-统一网络.md)
-    - [可选组件](./docs/modules/optional/组件-蓝牙.md)
+    - [通用组件](./docs/modules/common/组件-engine.md)
+    - [可选组件](./docs/modules/optional/组件-bluetooth.md)
 - **微应用**
   - [开发](./docs/microApp/微应用.md)
   - [离线包](./docs/microApp/微应用-离线服务器.md)

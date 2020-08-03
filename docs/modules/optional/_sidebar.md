@@ -1,2 +1,2 @@
-  - [蓝牙](./docs/modules/optional/组件-蓝牙.md)
-  - [百度地图](./docs/modules/optional/组件-百度地图.md)
+  - [bluetooth](./docs/modules/optional/组件-bluetooth.md)
+  - [map-baidu](./docs/modules/optional/组件-map-baidu.md)
