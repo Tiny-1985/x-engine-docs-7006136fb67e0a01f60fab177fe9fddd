@@ -17,3 +17,6 @@ https://max-team.github.io/Mars/
 
 ## 3d face 
 https://3d-book-css.netlify.app/
+
+## frame motion
+https://www.framer.com/motion/
