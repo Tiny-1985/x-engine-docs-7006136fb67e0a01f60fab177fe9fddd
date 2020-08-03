@@ -74,9 +74,7 @@ xengine.ui.showLoading({
 xengine.ui.showLoading(
 	title:'加载中'
 );
-
---------------
-
+  
 setTimeout(function () {
 	xengine.ui.hideLoading();
 }, 2000);
@@ -128,7 +126,7 @@ xengine.ui.showActionSheet({
 
 --------------
 
-// promise方式
+// promise
 xengine.ui.showActionSheet({
   itemList: ['A', 'B', 'C', 'D', 'E'],
 }).then((res) => {
@@ -225,6 +223,7 @@ xengine.ui.showModal({
 **示例**	
 
 ```javascript
+// success / fail
 xengine.ui.showToast({
   title: 'title',
   icon: 'success',
@@ -235,6 +234,19 @@ xengine.ui.showToast({
   fail: (error) => {
     alert(error); 
   }
+});
+
+
+// Promise
+const params = {
+  title: 'title',
+  icon: 'success',
+  duration: '2000', 
+}
+xengine.ui.showToast(params).then((res)=>{
+  alert(res)
+}).catch((error) => {
+  alert(error)  
 })
 ```
 
@@ -256,7 +268,3 @@ xengine.ui.hideToast();
 ```
 
 
-
-
-
-待续...........
