@@ -20,3 +20,11 @@ https://3d-book-css.netlify.app/
 
 ## frame motion
 https://www.framer.com/motion/
+
+
+## agentwebveiw  for android 
+对比一下 x5 
+https://github.com/Justson/AgentWeb
+
+## draw custom tabbar 
+https://medium.com/@acerodstin/how-to-create-customised-tab-bar-for-ios-devices-7c89efaeac95
