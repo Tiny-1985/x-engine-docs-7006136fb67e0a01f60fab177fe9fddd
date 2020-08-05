@@ -28,3 +28,11 @@ https://github.com/Justson/AgentWeb
 
 ## draw custom tabbar 
 https://medium.com/@acerodstin/how-to-create-customised-tab-bar-for-ios-devices-7c89efaeac95
+
+/Users/zk/git/hybrid-app/VBRRollingPit
+
+![image-20200805141710960](assets/image-20200805141710960.png)
+
+/Users/zk/git/hybrid-app/AMTabView/AMTabView
+
+![image-20200805141701183](assets/image-20200805141701183.png)
