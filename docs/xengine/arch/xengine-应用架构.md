@@ -55,7 +55,7 @@ js <-> native ,可同步, 可异步.
 
 可选组件示例: [蓝牙](./docs/modules/optional/组件-蓝牙.md)  ...
 
-
+通用组件与可选组件并没有本质差别， 只是通用组件会集成到 hybrid-template  中， 官方保证了组件间的兼容性。 
 
 引擎本身就有有可能会依赖某些组件，如 network， 被依赖的组件会以接口的形式被引用，用户如果需要自定义自己的 network 组件，则必须实现相应的接口，在 iOS 里表现为 protocol 接口，在 android 里则是 interface接口， 接口定义在引擎里。
 
