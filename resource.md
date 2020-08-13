@@ -36,3 +36,7 @@ https://medium.com/@acerodstin/how-to-create-customised-tab-bar-for-ios-devices-
 /Users/zk/git/hybrid-app/AMTabView/AMTabView
 
 ![image-20200805141701183](assets/image-20200805141701183.png)
+
+
+保护 ios 不闪退 
+https://github.com/jezzmemo/JJException
