@@ -36,6 +36,8 @@ class ReadmeAggregator():
     def readReadMe(self,subpath):
         path = join(self.path,subpath,"readme.md")
         path = path if os.path.isfile(path) else join(self.path,subpath,"README.md")
+        path = path if os.path.isfile(path) else join(self.path,subpath,"Readme.md")
+        path = path if os.path.isfile(path) else join(self.path,subpath,"ReadMe.md")
         if os.path.isfile(path):
             return Path(path).read_text()
         return ""
@@ -90,7 +92,7 @@ if __name__ == "__main__":
 
     arr = os.listdir("..")
     for d in arr:
-        if d.startswith(".") or d.endswith("docs"):
+        if d.startswith(".") or d.endswith("docs") or "template" in d:
             continue
         # print(d)
 
