@@ -1,14 +1,38 @@
-[remoteMD](https://raw.githubusercontent.com/zkty-team/x-engine-module-engine/master/README.md?token=AAHTKQXQUB3MD66VFGAIBB27GTPFG)
 
-# h5 (JS api)
+# engine
+引擎是一个特别的组件,其他所有组件都需要依赖于它. 
 
-[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-engine/master/h5/README.md)
+引擎的工作：
+
+- 组件的发现与编排。
+- 组件生命周期的管理与通知。
+- 组件的注入。
+
+>  要注意：组件不要依赖组件， 组件应该依赖于 protocol。这样，才可以使组件具有一定的独立性。
+
+![image-20200813142309675](assets/image-20200813142309675.png)
+
+
+
+引擎中定义了可能会造成冲突的模块它们的 protocol。
+
+![image-20200813142351469](assets/image-20200813142351469.png)
+
+如上例中， 当冲突发生时，如果依赖的库不可更改，只需在 module a 实现 protocol network，则可实现 afnetworking 3 到 4 的无缝迁移。
+
+![image-20200813142529255](assets/image-20200813142529255.png)
+# h5
+## api 1 
+
+## api 2
 
 # iOS
+## 注意事项
+ios readme 
 
-[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-engine/master/iOS/README.md)
 
 # android
+## 注意事项
+todo android  文档 
 
-[remoteMD](https://raw.githubusercontent.com/zk4/x-engine-module-engine/master/android/README.md)
 

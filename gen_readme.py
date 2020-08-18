@@ -79,11 +79,6 @@ class ReadmeAggregator():
         print(f'{self.module_short_name}')
 
 
-    def gen_nav(self):
-        # - [engine](./docs/modules/all/组件-engine.md)
-
-        pass
-
 if __name__ == "__main__":
 
     outputDir = "./docs/modules/all"
