@@ -1,7 +1,7 @@
 #!/Users/zk/anaconda3/bin/python3
 
 from pathlib import Path
-from os.path import join, isfile,basename
+from os.path import join, isfile,basename,dirname
 from pathlib import Path
 from distutils.dir_util import copy_tree
 import subprocess
@@ -30,40 +30,50 @@ tmplt = """
 class ReadmeAggregator():
 
     def __init__(self,path,outputDir):
-        self.path              = path
-        self.module_short_name = self.path.split("-")[-1]
+        self.folder_path              = path
+        self.module_short_name = self.folder_path.split("-")[-1]
         self.outputDir         = outputDir
-        self.handle_img("/tmp/md")
-        # rewrite self.path
-        self.path = "/tmp/md" 
 
-    def readReadMe(self,subpath):
-        path = join(self.path,subpath,"readme.md")
-        path = path if os.path.isfile(path) else join(self.path,subpath,"README.md")
-        path = path if os.path.isfile(path) else join(self.path,subpath,"Readme.md")
-        path = path if os.path.isfile(path) else join(self.path,subpath,"ReadMe.md")
+    def locateReadme(self,folder_path,subpath):
+        path = join(folder_path,subpath,"readme.md")
+        path = path if os.path.isfile(path) else join(folder_path,subpath,"README.md")
+        path = path if os.path.isfile(path) else join(folder_path,subpath,"Readme.md")
+        path = path if os.path.isfile(path) else join(folder_path,subpath,"ReadMe.md")
+        return path
+
+    def readReadMe(self,path):
         if os.path.isfile(path):
-            return Path(path).read_text()
+            content = Path(path).read_text()
+            return  content
         return ""
 
     
     def gen_root(self):
-        return self.readReadMe(".")
+        path = self.locateReadme(self.folder_path,".")
+        self.cp_assets(path)
+        return self.readReadMe(path)
 
     def gen_h5(self):
-        return self.readReadMe("h5")
+        path = self.locateReadme(self.folder_path,"h5")
+        return self.readReadMe(path)
 
     def gen_iOS(self):
-        return self.readReadMe("iOS")
+        path = self.locateReadme(self.folder_path,"iOS")
+        return self.readReadMe(path)
 
     def gen_android(self):
-        return self.readReadMe("android")
+        path = self.locateReadme(self.folder_path,"android")
+        return self.readReadMe(path)
     
-    def handle_img(self,out):
-        subprocess.Popen(["python3","/usr/local/bin/md_wash",self.path, "-c", "-u", "-o",out ]).communicate()
-        print("out",out+"/assets/*",join(self.outputDir,"assets"))
-        subprocess.Popen(["cp","-r",out+"/assets/",join(self.outputDir,"assets/") ]).communicate()
-        # shutil.copy(out+"/assets/*",
+    # def handle_img(self,path,out):
+        # subprocess.Popen(["python3","/usr/local/bin/md_wash",path, "-c", "-u", "-o",out ]).communicate()
+        # print("path",path,"out",out+"/assets/*",join(self.outputDir,"assets"))
+        # subprocess.Popen(["cp","-r",out+"/assets/",join(self.outputDir,"assets/") ]).communicate()
+    def cp_assets(self,readmepath):
+        assetsPath= join(dirname(readmepath),"assets")
+        subprocess.Popen(["cp","-r",assetsPath,self.outputDir ]).communicate()
+
+
 
     def get_short_module_name(self):
         return self.module_short_name
@@ -85,12 +95,11 @@ class ReadmeAggregator():
         with open(join(self.outputDir,"_sidebar.md"),"a") as f:
             f.write(f"- [{self.module_short_name}](./docs/modules/all/组件-{self.module_short_name}.md)\n")
         print(f'{self.module_short_name}')
-        shutil.rmtree("/tmp/md")
 
 
 if __name__ == "__main__":
 
-    shutil.rmtree("./docs/modules/all/assets")
+    # shutil.rmtree("./docs/modules/all/assets")
     outputDir = "./docs/modules/all"
     with open(join(outputDir,"_sidebar.md"),"w") as f:
         f.write("")
