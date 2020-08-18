@@ -24,12 +24,8 @@ offlineServerUrl 为离线包更新地址。
 
 ``` json
 {
-"msg": "success",
-"code": 0,
-"data":{
     "code":0,
-    "version":8,
-    "forceUpdate": 0,
+    "msg":"",
     "data":[
           {
               
@@ -53,6 +49,5 @@ offlineServerUrl 为离线包更新地址。
             "microAppVersion":4
           }
         ]
-    }
 }
 ```

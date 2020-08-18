@@ -1,5 +1,6 @@
 
-# camera
+**camera**
+
 # init
 make init name="module_name"
 

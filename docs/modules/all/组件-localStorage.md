@@ -1,5 +1,6 @@
 
-# localStorage
+**localStorage**
+
 ### 文档示例
 
 - 以actionSheet为例

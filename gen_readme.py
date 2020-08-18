@@ -12,7 +12,8 @@ import glob
 
 
 tmplt = """
-# {module_name}
+**{module_name}**
+
 {root_readme}
 # h5
 {h5_readme}
