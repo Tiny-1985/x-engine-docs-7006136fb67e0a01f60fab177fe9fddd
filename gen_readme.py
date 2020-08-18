@@ -33,6 +33,9 @@ class ReadmeAggregator():
         self.path              = path
         self.module_short_name = self.path.split("-")[-1]
         self.outputDir         = outputDir
+        self.handle_img("/tmp/md")
+        # rewrite self.path
+        self.path = "/tmp/md" 
 
     def readReadMe(self,subpath):
         path = join(self.path,subpath,"readme.md")
@@ -56,8 +59,12 @@ class ReadmeAggregator():
     def gen_android(self):
         return self.readReadMe("android")
     
-    def handle_img(self):
-        pass
+    def handle_img(self,out):
+        subprocess.Popen(["python3","/usr/local/bin/md_wash",self.path, "-c", "-u", "-o",out ]).communicate()
+        print("out",out+"/assets/*",join(self.outputDir,"assets"))
+        subprocess.Popen(["cp","-r",out+"/assets/",join(self.outputDir,"assets/") ]).communicate()
+        # shutil.copy(out+"/assets/*",
+
     def get_short_module_name(self):
         return self.module_short_name
 
@@ -78,10 +85,12 @@ class ReadmeAggregator():
         with open(join(self.outputDir,"_sidebar.md"),"a") as f:
             f.write(f"- [{self.module_short_name}](./docs/modules/all/组件-{self.module_short_name}.md)\n")
         print(f'{self.module_short_name}')
+        shutil.rmtree("/tmp/md")
 
 
 if __name__ == "__main__":
 
+    shutil.rmtree("./docs/modules/all/assets")
     outputDir = "./docs/modules/all"
     with open(join(outputDir,"_sidebar.md"),"w") as f:
         f.write("")
@@ -94,7 +103,6 @@ if __name__ == "__main__":
 
  
         path = "../"+d
-        # subprocess.Popen(["python3",before_script]).communicate()
         r = ReadmeAggregator(path,outputDir)
         r.gen()
 
