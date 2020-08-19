@@ -15,7 +15,9 @@ tmplt = """
 **{module_name}**
 
 {root_readme}
-# h5
+
+# api
+
 {h5_readme}
 
 # iOS
@@ -55,14 +57,17 @@ class ReadmeAggregator():
 
     def gen_h5(self):
         path = self.locateReadme(self.folder_path,"h5")
+        self.cp_assets(path)
         return self.readReadMe(path)
 
     def gen_iOS(self):
         path = self.locateReadme(self.folder_path,"iOS")
+        self.cp_assets(path)
         return self.readReadMe(path)
 
     def gen_android(self):
         path = self.locateReadme(self.folder_path,"android")
+        self.cp_assets(path)
         return self.readReadMe(path)
     
     # def handle_img(self,path,out):

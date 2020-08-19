@@ -22,18 +22,14 @@
 如上例中， 当冲突发生时，如果依赖的库不可更改，只需在 module a 实现 protocol network，则可实现 afnetworking 3 到 4 的无缝迁移。
 
 ![image-20200813142529255](assets/image-20200813142529255.png)
-# h5
-## api 1 
 
-## api 2
+# api
+
+
 
 # iOS
-## 注意事项
-ios readme 
 
 
 # android
-## 注意事项
-todo android  文档 
 
 

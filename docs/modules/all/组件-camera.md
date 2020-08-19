@@ -1,10 +1,11 @@
 
 **camera**
 
-# init
-make init name="module_name"
 
-# h5
+
+
+# api
+
 # about test 
 全局安装 mocha  或 jasmine
 ``` js
@@ -16,6 +17,6 @@ make init name="module_name"
 
 
 # android
-## 
+hello android
 
 

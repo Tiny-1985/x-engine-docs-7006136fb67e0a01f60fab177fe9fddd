@@ -1,10 +1,16 @@
 
 **protocols**
 
-# init
-make init name="module_name"
+protocols 组件是一个纯接口集合.为了解决藕系统内冲突的功能所设计.当组件开发人员需要重写系统使用的接口时,则需要继承并覆写.
 
-# h5
+注意:
+
+被复写的组件js api层对外暴露的接口应该保持一样.
+
+实现了相同 protocol 的组件只有一个会被初始化.
+
+# api
+
 # about test 
 全局安装 mocha  或 jasmine
 ``` js
@@ -16,6 +22,6 @@ make init name="module_name"
 
 
 # android
-## 
+hello android
 
 

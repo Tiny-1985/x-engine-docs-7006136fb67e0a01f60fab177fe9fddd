@@ -12,23 +12,11 @@ header 用原生的做,这样, 可以一定程度上提高用户体验, 如果�
 
 ![2020-07-13 22.34.15](assets/c7be7afb-5977-4051-a7fb-723bc3c9eb27.gif ':size=20%')
 
-## module.json
-
-```
-{
-  "module_id":"com.zkty.navigator",
-  "name":"导航",
-  "tag": "1.0.0",
-  "engine_version": "0.0.1",
-  "minimal_os_version":{
-    "ios": "11.1.0",
-    "android_api": 20,
-  }
-}
-```
-
  
-# h5
+
+
+# api
+
 ## setNavTitle
 
 - 设置导航栏中间名称

@@ -1,21 +1,23 @@
 
 **offline**
 
-# init
-make init name="module_name"
+## 
 
-# h5
-# about test 
-全局安装 mocha  或 jasmine
-``` js
-  npm install -g mocha
-``` 
+
+# api
+
+## api_name
+api desc
+
+api args table
+
+api demo
 
 
 # iOS
 
 
 # android
-## 
+hello
 
 
