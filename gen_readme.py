@@ -12,7 +12,6 @@ import glob
 
 
 tmplt = """
-**{module_name}**
 
 {root_readme}
 
@@ -93,7 +92,7 @@ class ReadmeAggregator():
         ios_readme     = self.gen_iOS()
         android_readme = self.gen_android()
 
-        content = tmplt.format(module_name = self.module_short_name,root_readme = root_readme,h5_readme = h5_readme, ios_readme = ios_readme, android_readme = android_readme)
+        content = tmplt.format(root_readme = root_readme,h5_readme = h5_readme, ios_readme = ios_readme, android_readme = android_readme)
         with open(self.output_path(),"w") as f:
             f.write(content)
         # gen _sidebar.md
@@ -111,7 +110,8 @@ if __name__ == "__main__":
 
     arr = os.listdir("..")
     for d in arr:
-        if d.startswith(".") or d.endswith("docs") or "template" in d:
+        if d.startswith(".") or d.endswith("docs"):
+              # or "template" in d:
             continue
         # print(d)
 
