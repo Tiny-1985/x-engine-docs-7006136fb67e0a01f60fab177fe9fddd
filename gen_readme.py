@@ -98,7 +98,7 @@ class ReadmeAggregator():
         # gen _sidebar.md
         with open(join(self.outputDir,"_sidebar.md"),"a") as f:
             f.write(f"- [{self.module_short_name}](./docs/modules/all/组件-{self.module_short_name}.md)\n")
-        print(f'{self.module_short_name}')
+        # print(f'{self.module_short_name}')
 
 
 if __name__ == "__main__":
@@ -110,10 +110,9 @@ if __name__ == "__main__":
 
     arr = os.listdir("..")
     for d in arr:
-        if d.startswith(".") or d.endswith("docs"):
-              # or "template" in d:
+        if d.startswith(".") or d.endswith("docs") or "hybrid-template" in d:
             continue
-        # print(d)
+        print(d)
 
  
         path = "../"+d

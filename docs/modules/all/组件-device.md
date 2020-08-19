@@ -12,11 +12,12 @@ make init name="module_name"
   - device.getSystemInfo(Object)
 
   
+
 **Object参数说明**	
+
 |    参数    |  类型  | 必填 | 默认值  |       说明       |
 | :--------: | :----: | :--: | :-----: | :--------------: |
 |   type    | String |  是  |   ---   |   获取设备信息的类型   |
-
 
 **type传入参数说明**	
 
@@ -42,7 +43,7 @@ make init name="module_name"
 xengine.device.getSystemInfo({
   'type':'navigationHeight'
 });
-``` 
+```
 
 
 # iOS

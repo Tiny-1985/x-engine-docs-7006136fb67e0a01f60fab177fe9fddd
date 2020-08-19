@@ -1,5 +1,4 @@
 - [offline](./docs/modules/all/组件-offline.md)
-- [template](./docs/modules/all/组件-template.md)
 - [device](./docs/modules/all/组件-device.md)
 - [ui](./docs/modules/all/组件-ui.md)
 - [pullDownRefresh](./docs/modules/all/组件-pullDownRefresh.md)
@@ -7,5 +6,6 @@
 - [nav](./docs/modules/all/组件-nav.md)
 - [localStorage](./docs/modules/all/组件-localStorage.md)
 - [network](./docs/modules/all/组件-network.md)
+- [template](./docs/modules/all/组件-template.md)
 - [camera](./docs/modules/all/组件-camera.md)
 - [protocols](./docs/modules/all/组件-protocols.md)
