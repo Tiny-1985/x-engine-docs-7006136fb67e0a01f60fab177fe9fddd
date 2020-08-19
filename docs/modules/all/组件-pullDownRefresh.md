@@ -1,10 +1,10 @@
 
 **pullDownRefresh**
 
+## desc
 
 
-
-# api
+# JS api
 
 ## onRefresh
 navite callBack js  start refresh

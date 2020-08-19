@@ -23,7 +23,7 @@
 
 ![image-20200813142529255](assets/image-20200813142529255.png)
 
-# api
+# JS api
 
 
 

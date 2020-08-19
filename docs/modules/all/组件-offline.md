@@ -1,17 +1,11 @@
 
 **offline**
 
-## 
+##  desc
 
 
-# api
+# JS api
 
-## api_name
-api desc
-
-api args table
-
-api demo
 
 
 # iOS

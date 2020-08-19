@@ -16,7 +16,7 @@ tmplt = """
 
 {root_readme}
 
-# api
+# JS api
 
 {h5_readme}
 

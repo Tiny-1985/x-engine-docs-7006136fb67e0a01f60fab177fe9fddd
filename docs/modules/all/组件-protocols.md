@@ -1,6 +1,7 @@
 
 **protocols**
 
+## desc
 protocols 组件是一个纯接口集合.为了解决藕系统内冲突的功能所设计.当组件开发人员需要重写系统使用的接口时,则需要继承并覆写.
 
 注意:
@@ -9,13 +10,9 @@ protocols 组件是一个纯接口集合.为了解决藕系统内冲突的功能
 
 实现了相同 protocol 的组件只有一个会被初始化.
 
-# api
 
-# about test 
-全局安装 mocha  或 jasmine
-``` js
-  npm install -g mocha
-``` 
+# JS api
+
 
 
 # iOS
