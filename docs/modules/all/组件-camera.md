@@ -3,7 +3,7 @@
 
 
 
-# JS api
+# api
 
 # about test 
 全局安装 mocha  或 jasmine

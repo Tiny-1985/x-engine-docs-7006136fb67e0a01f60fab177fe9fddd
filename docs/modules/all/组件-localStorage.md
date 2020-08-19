@@ -3,7 +3,7 @@
 ## desc
 
 
-# JS api
+# api
 
 ## setLocalStorage
 

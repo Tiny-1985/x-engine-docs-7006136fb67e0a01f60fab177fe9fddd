@@ -25,7 +25,7 @@
 
 
 
-# JS api
+# api
 
 ## request
 
