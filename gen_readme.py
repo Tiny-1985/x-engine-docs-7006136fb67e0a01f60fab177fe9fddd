@@ -93,6 +93,7 @@ class ReadmeAggregator():
         android_readme = self.gen_android()
 
         content = tmplt.format(root_readme = root_readme,h5_readme = h5_readme, ios_readme = ios_readme, android_readme = android_readme)
+        print(self.output_path())
         with open(self.output_path(),"w") as f:
             f.write(content)
         # gen _sidebar.md

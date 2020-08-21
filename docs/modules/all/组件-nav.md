@@ -418,9 +418,98 @@ xengine.nav.navigatorBack({
 
 
 
+## setNavSearchBar
+
+- 设置导航条搜索框
+- 函数声明
+  - nav.setNavSearchBar(Object)
+
+**Object参数说明**	
+
+
+|        参数         |     类型      | 必填 | 默认值 |          说明          |
+| :-----------------: | :-----------: | :--: | :----: | :--------------------: |
+|    searchBarSize    | Array(number) |  是  |  ---   |       搜索框大小       |
+|    cornerRadius     |    Number     |  否  |  ---   |     搜索框圆角大小     |
+|   backgroundColor   |    String     |  否  |  ---   |     搜索框背景颜色     |
+|     iconSearch      |    String     |  否  |  ---   |    搜索框里搜索图片    |
+|   iconSearchSize    | Array(number) |  否  |  ---   |  搜索框里搜索图片大小  |
+|      iconClear      |    String     |  否  |  ---   |    搜索框里清空图片    |
+|    iconClearSize    | Array(number) |  否  |  ---   |  搜索框里清空图片大小  |
+|      textColor      |    String     |  否  |  ---   |     搜索框文本颜色     |
+|      fontSize       |    Number     |  否  |  ---   |   搜索框文本字体大小   |
+|     placeHolder     |    String     |  否  |  ---   |      搜索框占位符      |
+| placeHolderFontSize |    Number     |  否  |  ---   |    搜索框占位符大小    |
+|       isInput       |    String     |  否  |  ---   | 搜索框是否添加点击事件 |
+
+**isInput:**
+
+- isInput只能传'True'或者'False'，
+- isInput默认为'False'。
+- 当isInput传'True'时，表示搜索框添加点击响应方法handlerNavSearchBar（见下面）
+- 当isInput传'False'时，表示搜索框不添加点击响应方法handlerNavSearchBar。
+
+**iconSearch**
+
+- 图片可分为2种传入方式
+
+  - 本地图片:
+    -  icon: /assets/图片名称.png
+  - 网络图片: 
+    - icon: 网络图片地址 cdn / 服务器 / 随你
+
+**iconClear**
+
+- 图片可分为2种传入方式
+
+  - 本地图片:
+    -  icon: /assets/图片名称.png
+  - 网络图片: 
+    - icon: 网络图片地址 cdn / 服务器 / 随你
+
+**示例**
+
+```javascript
+xengine.nav.setNavSearchBar({               
+  searchBarSize: [100, 30],              
+  cornerRadius: 5,                
+  backgroundColor: '#FFFF00',                
+  iconSearch: '/assets/search.png',               
+  iconSearchSize: [20, 20],              
+  iconClear: '/assets/xxx.png',             
+  iconClearSize: [15, 15],               
+  textColor: '#FFA500',               
+  fontSize: 13,               
+  placeHolder: '请输入',               
+  placeHolderFontSize: 12,              
+  isInput: "False"          
+});
+```
+
+
+
+## handlerNavSearchBar
+
+- 点击搜索框响应事件(当setNavSearchBar里'isInput'参数传入'True'时)
+- 函数声明
+  - nav.handlerNavSearchBar()
+
+**示例**
+
+```javascript
+xengine.nav.handlerNavSearchBar({
+  success: (res) => {
+    //业务逻辑
+  },
+  fail: (error) => {
+    console.log('error', error); 
+  }  
+});
+```
+
+
+
 # iOS
-# monkey test
-add monkey test UITargetAppPath should be provided
 
 
 # android
