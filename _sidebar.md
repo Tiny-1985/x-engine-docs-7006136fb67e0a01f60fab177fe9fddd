@@ -17,10 +17,9 @@
   - [微应用集成](./docs/microApp/微应用-集成.md)
 - **工程管理**
   - [TODO 计划](./docs/versionlize/TODO-计划.md)
-  - [质量控制](./docs/versionlize/质量控制.md)
-  - [版本管理](./docs/versionlize/引擎与组件版本管理.md)
-  - [版本冲突与解决方案](./docs/versionlize/版本冲突与解决方案.md)
-  - [模板管理](./docs/versionlize/模板管理.md)
-  - [配置文件](./docs/configfile/config.md)
+  - [规范-质量控制](./docs/versionlize/规范-质量控制.md)
+  - [规范-git](./docs/versionlize/规范-git.md)
+  - [规范-git-仓库](./docs/versionlize/规范-git-仓库.md)
+  - [规范-配置文件](./docs/versionlize/规范-配置文件.md)
 
 
