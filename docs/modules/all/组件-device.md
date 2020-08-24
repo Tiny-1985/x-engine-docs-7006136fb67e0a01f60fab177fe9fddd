@@ -6,7 +6,7 @@ make init name="module_name"
 
 # api
 
-# getSystemInfo 
+## getSystemInfo 
 - 获取设备信息
 - 函数说明
   - device.getSystemInfo(Object)

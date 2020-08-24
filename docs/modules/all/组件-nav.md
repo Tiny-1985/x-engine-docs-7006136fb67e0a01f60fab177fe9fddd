@@ -422,7 +422,7 @@ xengine.nav.navigatorBack({
 
 - 设置导航条搜索框
 - 函数声明
-  - nav.setNavSearchBar(Object)
+  - xengine.nav.setNavSearchBar(Object)
 
 **Object参数说明**	
 
@@ -440,14 +440,13 @@ xengine.nav.navigatorBack({
 |      fontSize       |    Number     |  否  |  ---   |   搜索框文本字体大小   |
 |     placeHolder     |    String     |  否  |  ---   |      搜索框占位符      |
 | placeHolderFontSize |    Number     |  否  |  ---   |    搜索框占位符大小    |
-|       isInput       |    String     |  否  |  ---   | 搜索框是否添加点击事件 |
+|       isInput       |     Bool      |  否  |  true  | 搜索框是否添加点击事件 |
 
 **isInput:**
 
-- isInput只能传'True'或者'False'，
-- isInput默认为'False'。
-- 当isInput传'True'时，表示搜索框添加点击响应方法handlerNavSearchBar（见下面）
-- 当isInput传'False'时，表示搜索框不添加点击响应方法handlerNavSearchBar。
+- isInput默认为true。
+- 当isInput传false时，表示搜索框添加点击响应方法handlerNavSearchBar（见下面）
+- 当isInput传true时，表示搜索框不添加点击响应方法handlerNavSearchBar。
 
 **iconSearch**
 
@@ -482,7 +481,7 @@ xengine.nav.setNavSearchBar({
   fontSize: 13,               
   placeHolder: '请输入',               
   placeHolderFontSize: 12,              
-  isInput: "False"          
+  isInput: true          
 });
 ```
 
@@ -492,7 +491,7 @@ xengine.nav.setNavSearchBar({
 
 - 点击搜索框响应事件(当setNavSearchBar里'isInput'参数传入'True'时)
 - 函数声明
-  - nav.handlerNavSearchBar()
+  - xengine.nav.handlerNavSearchBar()
 
 **示例**
 
