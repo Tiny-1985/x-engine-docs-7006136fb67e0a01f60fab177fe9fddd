@@ -139,7 +139,6 @@ xengine.camera.getPhoto()
 
 
 # iOS
-## ...
 
 
 # android
