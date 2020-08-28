@@ -427,20 +427,20 @@ xengine.nav.navigatorBack({
 **Object参数说明**	
 
 
-|        参数         |     类型      | 必填 | 默认值 |          说明          |
-| :-----------------: | :-----------: | :--: | :----: | :--------------------: |
-|    searchBarSize    | Array(number) |  是  |  ---   |       搜索框大小       |
-|    cornerRadius     |    Number     |  否  |  ---   |     搜索框圆角大小     |
-|   backgroundColor   |    String     |  否  |  ---   |     搜索框背景颜色     |
-|     iconSearch      |    String     |  否  |  ---   |    搜索框里搜索图片    |
-|   iconSearchSize    | Array(number) |  否  |  ---   |  搜索框里搜索图片大小  |
-|      iconClear      |    String     |  否  |  ---   |    搜索框里清空图片    |
-|    iconClearSize    | Array(number) |  否  |  ---   |  搜索框里清空图片大小  |
-|      textColor      |    String     |  否  |  ---   |     搜索框文本颜色     |
-|      fontSize       |    Number     |  否  |  ---   |   搜索框文本字体大小   |
-|     placeHolder     |    String     |  否  |  ---   |      搜索框占位符      |
-| placeHolderFontSize |    Number     |  否  |  ---   |    搜索框占位符大小    |
-|       isInput       |     Bool      |  否  |  true  | 搜索框是否添加点击事件 |
+|         参数         |     类型      | 必填 | 默认值 |          说明          |
+| :------------------: | :-----------: | :--: | :----: | :--------------------: |
+|     cornerRadius     |    Number     |  否  |  ---   |     搜索框圆角大小     |
+|   backgroundColor    |    String     |  否  |  ---   |     搜索框背景颜色     |
+|      iconSearch      |    String     |  否  |  ---   |    搜索框里搜索图片    |
+|    iconSearchSize    | Array(number) |  否  |  ---   |  搜索框里搜索图片大小  |
+|      iconClear       |    String     |  否  |  ---   |    搜索框里清空图片    |
+|    iconClearSize     | Array(number) |  否  |  ---   |  搜索框里清空图片大小  |
+|      textColor       |    String     |  否  |  ---   |     搜索框文本颜色     |
+|       fontSize       |    Number     |  否  |  ---   |   搜索框文本字体大小   |
+|     placeHolder      |    String     |  否  |  ---   |      搜索框占位符      |
+| placeHolderFontSize  |    Number     |  否  |  ---   |    搜索框占位符大小    |
+|       isInput        |     Bool      |  否  |  true  | 搜索框是否添加点击事件 |
+| becomeFirstResponder |     Bool      |  否  | false  |   搜索框是否获取焦点   |
 
 **isInput:**
 
@@ -470,7 +470,6 @@ xengine.nav.navigatorBack({
 
 ```javascript
 xengine.nav.setNavSearchBar({               
-  searchBarSize: [100, 30],              
   cornerRadius: 5,                
   backgroundColor: '#FFFF00',                
   iconSearch: '/assets/search.png',               
@@ -481,7 +480,8 @@ xengine.nav.setNavSearchBar({
   fontSize: 13,               
   placeHolder: '请输入',               
   placeHolderFontSize: 12,              
-  isInput: true          
+  isInput: true,
+  becomeFirstResponder:false
 });
 ```
 
@@ -509,6 +509,8 @@ xengine.nav.handlerNavSearchBar({
 
 
 # iOS
+# monkey test
+add monkey test UITargetAppPath should be provided
 
 
 # android

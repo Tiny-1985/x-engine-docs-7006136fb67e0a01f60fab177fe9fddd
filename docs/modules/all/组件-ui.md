@@ -249,6 +249,90 @@ xengine.ui.hideToast();
 
 
 
+---
+
+
+
+## showPickerView
+
+- 嵌入页面的滚动选择器。
+- 函数声明
+  - ui.showPickerView(Object)
+
+**Object参数说明**		
+
+|          参数          |  类型  | 必填 | 默认值  |           说明            |
+| :--------------------: | :----: | :--: | :-----: | :-----------------------: |
+|          data          | Array  |  是  |  ----   |        见下方说明         |
+| toolBarBackgroundColor | String |  否  | #f5f5f5 |   顶部toolBar的背景颜色   |
+| pickerBackgroundColor  | String |  否  | #f7f7f7 |   pickerView的背景颜色    |
+|    backgroundColor     | String |  否  | #1E1F20 | 承载pickerView的背景颜色  |
+|  backgroundColorAlpha  | String |  否  |   0.7   |   0.1-->1.0的取值范围的   |
+|      pickerHeight      | Number |  否  |   250   |       picker的高度        |
+|       rowHeight        | Number |  否  |   44    |       每一条的高度        |
+|        leftText        | String |  否  |  取消   |   toolBar左上角按钮文字   |
+|     leftTextColor      | String |  否  |  blue   | toolBar左上角按钮文字颜色 |
+|      leftTextSize      | Number |  否  |   20    | toolBar左上角按钮文字大小 |
+|       rightText        | String |  否  |  确定   |   toolBar右上角按钮文字   |
+|     rightTextColor     | String |  否  |  blue   | toolBar右上角按钮文字颜色 |
+
+**data值说明**
+
+- 由于屏幕宽度的限制目前只支持1-4组数据.
+
+```javascript
+data: [
+	["北京A", "北京B", "北京C","北京D", "北京E", "北京F"],
+	["1街A", "1街B", "1街C","1街D", "1街E", "1街F"],
+	["2街A", "2街B", "2街C","2街D", "2街E", "2街F"],
+	["3街A", "3街B", "3街C","3街D", "3街E", "3街F"],
+]
+```
+
+
+
+**示例**	
+
+```javascript
+const params = {
+  data: [
+    ["北京A", "北京B", "北京C","北京D", "北京E", "北京F"],
+    ["1街A", "1街B", "1街C","1街D", "1街E", "1街F"],
+    ["2街A", "2街B", "2街C","2街D", "2街E", "2街F"],
+    ["3街A", "3街B", "3街C","3街D", "3街E", "3街F"],           
+  ],            
+}
+xengine.ui.showPickerView(params).then((res) => {
+  console.log(res)  
+})
+```
+
+
+
+---
+
+
+
+## handlerPickerViewEnter
+
+- 点击确定按钮的方法
+- 函数声明
+  - handlerPickerViewEnter()
+
+
+```javascript
+ xengine.ui.handlerPickerViewEnter({
+   success: (res) => {
+     alert(res.data);
+   },
+   fail: (error) => {
+     alert('error', error); 
+   }
+ })
+```
+
+
+
 
 
 # iOS
