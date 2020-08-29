@@ -21,5 +21,6 @@
   - [规范-git](./docs/versionlize/规范-git.md)
   - [规范-git-仓库](./docs/versionlize/规范-git-仓库.md)
   - [规范-配置文件](./docs/versionlize/规范-配置文件.md)
+  - [规范-版本](./docs/versionlize/规范-semver2.0.md)
 
 

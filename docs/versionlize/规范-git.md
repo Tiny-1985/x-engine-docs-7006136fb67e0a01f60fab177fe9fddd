@@ -1,4 +1,4 @@
-## 格式 
+## commit 格式
 
 **commit message格式**
 
@@ -70,43 +70,196 @@ feat(Controller):用户查询接口开发
 - 便于程序员对提交历史进行追溯，了解发生了什么情况。
 - 一旦约束了commit message，意味着我们将慎重的进行每一次提交，不能再一股脑的把各种各样的改动都放在一个git commit里面，这样一来整个代码改动的历史也将更
 
+ 
 
 
-## 监控服务
 
-通常提出一个规范之后，为了大家更好的执行规范，就需要进行一系列的拉通，比如分享给大家这种规范的优点、能带来什么收益等，在大家都认同的情况下最好有一些强制性的措施。当然git commit规范也一样，前期我们分享完规范之后考虑从源头进行强制拦截，只要大家提交代码的commit message不符合规范，直接不能提交。但由于代码仓库操作权限的问题，我们最终选择了使用webhook通过发送警告的形式进行监控，督促大家按照规范执行代码提交。除了监控git commit message的规范外，我们还加入了大代码量提交监控和删除文件监控，减少研发的代码误操作。
+
+
+
+
+## subtree 
+
+为了在一个工程里统一管理多个模块, 我们将使用 git subtree  做为辅助.
+
+git subtree 并没有引入特殊的 git 组织结构. 
+
+
+
+![image-20200828143648420](assets/image-20200828143648420.png)
+
+简单来说, 就是将其他仓库的文件直接 copy 到了本地工程. 相对 git submodule 来说, 暴力且简单.
+
+
+
+```
+SYNOPSIS
+git subtree add   -P <prefix> <commit>
+git subtree add   -P <prefix> <repository> <ref>
+git subtree pull  -P <prefix> <repository> <ref>
+git subtree push  -P <prefix> <repository> <ref>
+git subtree merge -P <prefix> <commit>
+git subtree split -P <prefix> [OPTIONS] [<commit>]
+```
+
+### 常规操作
+
+```
+git subtree <cmd> <repo-url> <branch>  --squash --prefix=<path-relative-to-root>
+```
+
+**git subtree add** (相当于 git clone)
+
+``` bash
+git subtree pull --prefix=x-engine-module-nav https://github.com/zkty-team/x-engine-module-nav  master --squash
+```
+
+
+
+**git subtree pull:**
+
+``` bash
+git subtree pull --prefix=x-engine-module-nav https://github.com/zkty-team/x-engine-module-nav  master --squash
+```
+
+
+
+**git subtree push**
+
+``` bash
+git subtree push --prefix=x-engine-module-nav https://github.com/zkty-team/x-engine-module-nav  master
+```
+
+
+
+###  拆分已有的仓库
+
+https://lostechies.com/johnteague/2014/04/04/using-git-subtrees-to-split-a-repository/
+
+![image-20200828153908988](assets/image-20200828153908988.png)
+
+```
+# 将当前 h5 文件夹下的历史做成一个新的分支,叫做 split
+# 在执行完后 h5文件夹并不会变
+git subtree split --prefix=h5 -b split
+```
+
+![image-20200828153458425](assets/image-20200828153458425.png)
+
+
+
+```
+# 只保留当前 h5 文件夹下的历史
+git filter-branch --prune-empty --subdirectory-filter h5 master
+```
+
+执行完后, h5 文件夹下的东西到 root 级了. 其他的文件全删了. origin/master 也不再跟踪, 而只有本地的 master.
+
+相当于你只在本地提交了历史.
+
+![image-20200828153827050](assets/image-20200828153827050.png)
+
+
+
+## .gitignore
+
+
+
+### Git ignore patterns
+
+`.gitignore` uses [globbing patterns](http://linux.die.net/man/7/glob) to match against file names. You can construct your patterns using various symbols:
+
+| Pattern                              | Example matches                                              | Explanation*                                                 |
+| ------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `**/logs`                            | `logs/debug.log` `logs/monday/foo.bar` `build/logs/debug.log` | You can prepend a pattern with a double asterisk to match directories anywhere in the repository. |
+| `**/logs/debug.log`                  | `logs/debug.log` `build/logs/debug.log` *but not* `logs/build/debug.log` | You can also use a double asterisk to match files based on their name and the name of their parent directory. |
+| `*.log`                              | `debug.log` `foo.log` `.log` `logs/debug.log`                | An asterisk is a wildcard that matches zero or more characters. |
+| `*.log` `!important.log`             | `debug.log` `trace.log` *but not* `important.log` `logs/important.log` | Prepending an exclamation mark to a pattern negates it. If a file matches a pattern, but *also* matches a negating pattern defined later in the file, it will not be ignored. |
+| `*.log` `!important/*.log` `trace.*` | `debug.log` `important/trace.log` *but not* `important/debug.log` | Patterns defined after a negating pattern will re-ignore any previously negated files. |
+| `/debug.log`                         | `debug.log` *but not* `logs/debug.log`                       | Prepending a slash matches files only in the repository root. |
+| `debug.log`                          | `debug.log` `logs/debug.log`                                 | By default, patterns match files in any directory            |
+| `debug?.log`                         | `debug0.log` `debugg.log` *but not* `debug10.log`            | A question mark matches exactly one character.               |
+| `debug[0-9].log`                     | `debug0.log` `debug1.log` *but not* `debug10.log`            | Square brackets can also be used to match a single character from a specified range. |
+| `debug[01].log`                      | `debug0.log` `debug1.log` *but not* `debug2.log` `debug01.log` | Square brackets match a single character form the specified set. |
+| `debug[!01].log`                     | `debug2.log` *but not* `debug0.log` `debug1.log` `debug01.log` | An exclamation mark can be used to match any character except one from the specified set. |
+| `debug[a-z].log`                     | `debuga.log` `debugb.log` *but not* `debug1.log`             | Ranges can be numeric or alphabetic.                         |
+| `logs`                               | `logs` `logs/debug.log` `logs/latest/foo.bar` `build/logs` `build/logs/debug.log` | If you don't append a slash, the pattern will match both files and the contents of directories with that name. In the example matches on the left, both directories and files named *logs* are ignored |
+| logs/                                | `logs/debug.log` `logs/latest/foo.bar` `build/logs/foo.bar` `build/logs/latest/debug.log` | Appending a slash indicates the pattern is a directory. The entire contents of any directory in the repository matching that name – including all of its files and subdirectories – will be ignored |
+| `logs/` `!logs/important.log`        | `logs/debug.log` `logs/important.log`                        | Wait a minute! Shouldn't `logs/important.log` be negated in the example on the left  Nope! Due to a performance-related quirk in Git, you *can not* negate a file that is ignored due to a pattern matching a directory |
+| `logs/**/debug.log`                  | `logs/debug.log` `logs/monday/debug.log` `logs/monday/pm/debug.log` | A double asterisk matches zero or more directories.          |
+| `logs/*day/debug.log`                | `logs/monday/debug.log` `logs/tuesday/debug.log` *but not* `logs/latest/debug.log` | Wildcards can be used in directory names as well.            |
+| `logs/debug.log`                     | `logs/debug.log` *but not* `debug.log` `build/logs/debug.log` | Patterns specifying a file in a particular directory are relative to the repository root. (You can prepend a slash if you like, but it doesn't do anything special.) |
 
  
 
-**整体流程**
+In addition to these characters, you can use # to include comments in your `.gitignore` file:
 
+```
+# ignore all logs
+*.log
+```
 
+You can use \ to escape `.gitignore` pattern characters if you have files or directories containing them:
 
-![image.png](assets/v2-3342b351bec8c267c7fd52d33bdb00c5_b-20200824103352895.jpg)![image.png](assets/v2-3342b351bec8c267c7fd52d33bdb00c5_720w-20200824103352904.jpg)
+```
+# ignore the file literally named foo[01].txt
+foo\[01\].txt
+```
 
+### Shared .gitignore files in your repository
 
+Git ignore rules are usually defined in a `.gitignore` file at the root of your repository. However, you can choose to define multiple `.gitignore` files in different directories in your repository. Each pattern in a particular `.gitignore` file is tested relative to the directory containing that file. However the convention, and simplest approach, is to define a single `.gitignore` file in the root. As your `.gitignore` file is checked in, it is versioned like any other file in your repository and shared with your teammates when you push. Typically you should only include patterns in `.gitignore` that will benefit other users of the repository.
 
-- 服务注册：服务注册主要完成代码库相关信息的添加。
-- 重复校验：防止merge request再走一遍验证流程。
-- 消息告警：对不符合规范以及大代码量提交、删除文件等操作发送告警消息。
-- DB：存项目信息和git commit信息便于后续统计commit message规范率。
+### Personal Git ignore rules
 
-webhook是作用于代码库上的，用户提交git commit，push到仓库的时候就会触发webhook，webhook从用户的commit信息里面获取到commit message，校验其是否满足git commit规范，如果不满足就发送告警消息；如果满足规范，调用gitlab API获取提交的diff信息，验证提交代码量，验证是否有重命名文件和删除文件操作，如果存在以上操作还会发送告警消息，最后把所有记录都入库保存。
+You can also define personal ignore patterns for a particular repository in a special file at `.git/info/exclude`. These are not versioned, and not distributed with your repository, so it's an appropriate place to include patterns that will likely only benefit you. For example if you have a custom logging setup, or special development tools that produce files in your repository's working directory, you could consider adding them to `.git/info/exclude` to prevent them from being accidentally committed to your repository.
+
+## Global Git ignore rules
+
+In addition, you can define global Git ignore patterns for all repositories on your local system by setting the Git `core.excludesFile` property. You'll have to create this file yourself. If you're unsure where to put your global `.gitignore` file, your home directory isn't a bad choice (and makes it easy to find later). Once you've created the file, you'll need to configure its location with `git config`:
+
+```
+$ touch ~/.gitignore
+$ git config --global core.excludesFile ~/.gitignore
+```
+
+You should be careful what patterns you choose to globally ignore, as different file types are relevant for different projects. Special operating system files (e.g. `.DS_Store` and `thumbs.db`) or temporary files created by some developer tools are typical candidates for ignoring globally.
+
+## Ignoring a previously committed file
+
+If you want to ignore a file that you've committed in the past, you'll need to delete the file from your repository and then add a `.gitignore` rule for it. Using the `--cached` option with `git rm` means that the file will be deleted from your repository, but will remain in your working directory as an ignored file.
+
+```
+$ echo debug.log >> .gitignore
+$ git rm --cached debug.log
+rm 'debug.log'
+$ git commit -m "Start ignoring debug.log"
+```
+
+You can omit the `--cached` option if you want to delete the file from both the repository and your local file system.
+
+### Committing an ignored file
+
+It is possible to force an ignored file to be committed to the repository using the `-f` (or `--force`) option with `git add`:
+
+```
+$ cat .gitignore
+*.log
+$ git add -f debug.log
+$ git commit -m "Force adding debug.log"
+```
+
+You might consider doing this if you have a general pattern (like `*.log`) defined, but you want to commit a specific file. However a better solution is to define an exception to the general rule:
+
+```
+$ echo !debug.log >> .gitignore
+$ cat .gitignore
+*.log
+!debug.log
+$ git add debug.log
+$ git commit -m "Adding debug.log"
+```
+
+This approach is more obvious, and less confusing, for your teammates.
 
  
-
- 
-
-## 未来思考
-
-git hooks分为客户端hook和服务端hook。客户端hook又分为pre-commit、prepare-commit-msg、commit-msg、post-commit等，主要用于控制客户端git的提交工作流。用户可以在项目根目录的.git目录下面配置使用，也可以配置全局git template用于个人pc上的所有git项目使用。服务端hook又分为pre-receive、post-receive、update，主要在服务端接受提交对象时进行调用。
-
-以上这种采用webhook的形式对git commit进行监控就是一种server端的hook，相当于post-receive。这种方式并不能阻止代码的提交，它只是通过告警的形式来约束用户的行为，但最终不规范的commit message还是被提交到了服务器，不利于后面change log的生成。由于公司代码库权限问题，我们目前只能添加这种post-receive类型的webhook。如大家有更高的代码库权限，可以采用server端pre-receive类型的webhook，直接拒绝不规范的git commit message。只要git commit规范了，我们甚至可以考虑把代码和bug、需求关联等等。
-
-当然这块我们也可以考虑客户端的pre-commit，pre-commit在git add提交之后，然后执行git commit时执行，脚本执行没错就继续提交，反之就会驳回。客户端git hooks位于每个git项目下的隐藏文件.git中的hooks文件夹里。我们可以通过修改这块的配置文件添加我们的规则校验，直接阻止不规范message的提交，也可以通过客户端commit-msg类型的hook进行拦截，把不规范扼杀在萌芽之中。修改每个git项目下面.git目录中的hooks文件大家肯定觉得浪费时间，其实这里可以采用配置全局git template来完成。但是这又会涉及到hooks配置文件同步的问题。hooks配置文件在本地，如何让hooks配置文件的修改能同步到所有使用的项目又成为一个问题。所以使用服务端hook还是客户端hook需要根据具体需求做适当的权衡。
-
-git hook不光可以用来做规范限制，它还可以做更多有意义的事情。一次git commit提交的信息量很大，有作者信息、代码库信息、commit等信息。我们的监控服务就根据作者信息做了git commit的统计，这样不仅可以用来监控commit message的规范性，也可以用来监控大家的工作情况。我们也可以把git commit和相关的bug关联起来，我们查看bug时就可以查看解决这个bug的代码修改，很有利于相关问题的追溯。当然我们用同样的方法也可以把git commit和相关的需求关联起来，比如我们定义一种格式feat *786990（需求的ID），然后在git commit的时候按照这种格式提交，webhook就可以根据这种格式把需求和git commit进行关联，也可以用来追溯某个需求的代码量，当然这个例子不一定合适，但足以证明git hook功能之强大，可以给我们的流程规范带来很大的便利。
-
- 
-
-编码规范、流程规范在软件开发过程中是至关重要的，它可以使我们在开发过程中少走很多弯路。Git commit规范也是如此，确实也是很有必要的，几乎不花费额外精力和时间，但在之后查找问题的效率却很高。作为一名程序员，我们更应注重代码和流程的规范性，永远不要在质量上将就。
