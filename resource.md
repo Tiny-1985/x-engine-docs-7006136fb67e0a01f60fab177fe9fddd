@@ -40,3 +40,7 @@ https://medium.com/@acerodstin/how-to-create-customised-tab-bar-for-ios-devices-
 
 保护 ios 不闪退 
 https://github.com/jezzmemo/JJException
+
+
+## java 规范
+https://hollischuang.github.io/toBeTopJavaer/#/basics/java-basic/value-of-vs-to-string
