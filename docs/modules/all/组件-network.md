@@ -49,12 +49,17 @@
 | success | Function | 否   |        | 成功返回的回调函数 |
 | fail    | Function | 否   |        | 失败返回的回调函数 |
 
+- object.success回调方法
 
+| 参数名   | 类型     | 必填 |        说明        |
+| -------  | -------- | ---- | :----------------: |
+| statusCode | Number   | 是   |  http返回状态码   |
+| data    | Object   | 是   |  服务器返回内容  |
 
 - data 数据说明
   - 最终发送给移动端(iOS, Android)的数据是 String 类型，如果传入的 data 不是 String 类型，会被转换成 String。
   - 转换规则`JSON.stringify(data)`。
-  - 移动端(iOS, Android)会在接收到数据时对data进行序列化。
+  - 移动端(iOS, Android)会在接收到数据时对data进行序列化。  
 
 
 
