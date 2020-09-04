@@ -43,6 +43,7 @@
 | ------- | -------- | ---- | :----: | :----------------: |
 | url     | String   | 是   |        |   服务器接口地址   |
 | data    | Object   | 否   |        |     请求的参数     |
+| header  | Object   | 否   |        |     请求头         |
 | method  | String   | 否   |  GET   |      GET/POST      |
 | timeout | Number   | 否   | 30000  |  超时时间, 单位ms  |
 | success | Function | 否   |        | 成功返回的回调函数 |
@@ -63,10 +64,10 @@
 // 回调发送网络请求
 xengine.network.request({
   url: 'http://127.0.0.1:8000/data1.json', // 仅为示例, 实际以接口为准
+  method: 'GET',
   data: {
-    text: 'Hello,x-engine',
-    method: 'GET'
-  }
+    text: 'Hello,x-engine'
+  },
   success: (res) => {
   	console.log(res);
 	},
