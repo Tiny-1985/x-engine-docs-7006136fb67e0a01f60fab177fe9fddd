@@ -1,4 +1,6 @@
+- [generator](./docs/modules/all/组件-generator.md)
 - [offline](./docs/modules/all/组件-offline.md)
+- [model](./docs/modules/all/组件-model.md)
 - [device](./docs/modules/all/组件-device.md)
 - [ui](./docs/modules/all/组件-ui.md)
 - [pullDownRefresh](./docs/modules/all/组件-pullDownRefresh.md)
@@ -8,4 +10,6 @@
 - [network](./docs/modules/all/组件-network.md)
 - [template](./docs/modules/all/组件-template.md)
 - [camera](./docs/modules/all/组件-camera.md)
+- [cli](./docs/modules/all/组件-cli.md)
 - [protocols](./docs/modules/all/组件-protocols.md)
+- [server](./docs/modules/all/组件-server.md)

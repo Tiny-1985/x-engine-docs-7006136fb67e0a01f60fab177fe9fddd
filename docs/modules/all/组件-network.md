@@ -66,7 +66,7 @@ xengine.network.request({
   data: {
     text: 'Hello,x-engine',
     method: 'GET'
-  }
+  },
   success: (res) => {
   	console.log(res);
 	},
@@ -85,6 +85,21 @@ async function request() {
   }
   const result = await xengine.network.request();
   console.log(result);
+}
+```
+
+```javascript
+// Promise
+async function request() {
+  const params = {
+    url: 'http://127.0.0.1:8000/data1.json', // 仅为示例, 以实际开发接口为准
+    method: 'GET'
+  }
+  xengine.network.request(params).then(res => {
+  	console.log(res);
+  }).catch(error => {
+  	console.log(error);
+  })
 }
 ```
 
