@@ -3,7 +3,6 @@
   - [规范](./docs/modules/组件-规范.md)
   - [开发](./docs/modules/组件-开发.md)
   - [工具](./docs/modules/组件-工具.md)
-  - [升级](./docs/modules/组件-升级.md)
   - [组件仓库](./docs/modules/组件-仓库.md)
   - [所有组件-api](./docs/modules/all/组件-engine.md)
     - [通用组件](./docs/modules/common/README.md)
