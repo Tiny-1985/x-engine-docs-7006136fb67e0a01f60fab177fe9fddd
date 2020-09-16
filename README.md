@@ -11,18 +11,6 @@ x-engine 为开发人员提供了一套完善的解决方案. 涉及业务,组�
 - 支持任何前端框架
 
 
-
-
-
-
-# 演示项目
-
-![蒲公英(iOS)](assets/image-20200719191338519.png)
-
-
-
-
-
 # 工程地址
 
 引擎: [iOS](https://github.com/zkty-team/x-engine-module-engine/tree/master/iOS) [android](https://github.com/zkty-team/x-engine-module-engine/tree/master/android)
