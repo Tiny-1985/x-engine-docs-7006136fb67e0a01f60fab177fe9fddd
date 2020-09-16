@@ -25,7 +25,7 @@ x-engine 为开发人员提供了一套完善的解决方案. 涉及业务,组�
 
 # 工程地址
 
-引擎: [iOS](https://github.com/zkty-team/x-engine-iOS) [android](https://github.com/zkty-team/x-engine-android)
+引擎: [iOS](https://github.com/zkty-team/x-engine-module-engine/tree/master/iOS) [android](https://github.com/zkty-team/x-engine-module-engine/tree/master/android)
 
 业务模板:[hybrid-tempalte](https://github.com/zkty-team/x-engine-hybrid-template)
 
