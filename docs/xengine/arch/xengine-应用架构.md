@@ -14,7 +14,9 @@ x-engine 理论上只负责管理模块， 但因为当前业务需求，我们�
 
 ## 组件化
 
-组件分为[通用组件](./docs/modules/组件-规范.md#组件分类),与[可选组件](./docs/modules/组件-规范.md#组件分类)
+组件开发可见： [组件-开发.md](../../modules/组件-开发.md) 
+
+在文档里组件被分为[通用组件](./docs/modules/组件-规范.md#组件分类),与[可选组件](./docs/modules/组件-规范.md#组件分类)
 
 通用组件示例:[引擎](./docs/modules/common/组件-引擎.md)  [统一网络](./docs/modules/common/组件-统一网络.md)  [原生导航](./docs/modules/common/组件-原生导航.md) ...
 
@@ -32,6 +34,29 @@ x-engine 理论上只负责管理模块， 但因为当前业务需求，我们�
 
 
 
-## 离线机制
-见 [离线包](./docs/microApp/微应用-离线服务器.md)
+###  自动注册组件
+
+现在的 xengine 里组件是怎么自动注册的呢？
+
+通过约定文件名，没错！暴力如斯！
+
+以 `__xengine__module_` 为类名开头。 组件则会自动注册。
+
+创建类 继承 `xengine__module_BaseModule`。例如：`__xengine__module_UIModule`
+
+虽然简单，但在 iOS 里与 android 都非常容易实现。
+
+
+
+### 依赖注入
+
+依赖注入是 spring 最强大的功能。 xengine 里暂时并未完全实现。
+
+spring 能够注入循环依赖， 在当前框架模型下暂时未用到。
+
+TODO: 整合市面上已存的 android 注入框架，与 iOS 注入框架。
+
+现在的注入还是需要手工注入，因为不考虑组件的循环依赖， 所以，我们只需在所有组件初始化后，一一回调即可，见 [组件-engine.md](../../modules/all/组件-engine.md) 
+
+ 
 
