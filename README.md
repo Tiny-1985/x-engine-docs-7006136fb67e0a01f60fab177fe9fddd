@@ -4,11 +4,6 @@
 
 x-engine 是一个跨端模块管理框架，它的定位就是是客户端的 spring，管理 bean（模块）。
 
-两个主要功能：
-
-1. 多端模块管理。
-2. 多端 api 与 DTO 的统一。
-
 ![image-20200929021827767](assets/image-20200929021827767.png)
 
 x-engine 的目的并不是做“另一个跨平台”框架，
@@ -17,7 +12,7 @@ x-engine 的目的并不是做“另一个跨平台”框架，
 
 总结下来就这几种模式：
 
-native + web  : cordova
+native + web  : cordova 
 
 h5 -> native  : reactie-native  weex 
 
@@ -27,9 +22,22 @@ native + web- : 小程序
 
 除了 cordova 年久失修外，这些模式都有一个"特性", 绑定 UI 框架。这给某些已存在的 UI 技术栈的集成带来了一定的困难。 如果仅仅是尝尝鲜，那对他们的集成与扩展又会是一件非常麻烦的事。
 
-基于 x-engine 的微应用（MicroApp）模块，则是为了解决这个问题而产生，x-engine 要能完整的应用开发，也必须有 UI 框架支持，但这套 UI 框架可以任你选择。比如， 使用 Taro。
+x-engine 可以在一定程度上解决选择困难症的问题。
 
-如果你觉得 h5 性能不好，你甚至可以直接加入 react-native 模块， 将 Taro UI 打包成 react-native bundle 放在 x-engine 的 RN 模块里运行。
+
+
+## MicroApp
+
+x-engine 官方带了一个微应用（MicroApp）的模块， 它是一套正在开发中的基于 H5 的 Hybrid 解决方案。
+
+支持的功能包含：
+
+- 原生离线更新，微应用离线更新，
+- 原生网络，原生 nav，等。
+
+而这些功能的支持，也是 MicroApp 模块整合其他模块所获得的。
+
+如果你觉得 h5 性能不好，你甚至可以切换到 react-native 模块进行开发。
 
 
 
