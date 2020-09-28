@@ -109,7 +109,11 @@ if __name__ == "__main__":
 
     arr = os.listdir("..")
     for d in arr:
-        subprocess.Popen(["git-stats","-r",">>","/Users/zk/git/company/working/modules/x-engine-docs/out.html"]).communicate()
+        # subprocess.Popen(["git-stats","--raw","|","git-stats-html",">>","/Users/zk/git/company/working/modules/x-engine-docs/out.html"])
+
+        grepproc  = subprocess.Popen(["cd", f"../{d}" ,"git-stats","--raw"], stdout=subprocess.PIPE)
+        pmrnaproc = subprocess.Popen(["git-stats-html"],stdin=grepproc.stdout)
+        pmrnaproc.communicate()
 
  
 

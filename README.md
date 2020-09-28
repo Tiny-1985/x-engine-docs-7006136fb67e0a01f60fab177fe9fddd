@@ -2,32 +2,40 @@
 
 # X-engine 简介
 
-x-engine 是一个跨端应用框架，它的定位就是是客户端的 spring，管理 bean（模块）。并实现模块的自动发现，注入。以及生命周期。
+x-engine 是一个跨端模块管理框架，它的定位就是是客户端的 spring，管理 bean（模块）。
 
-x-engine 的目的并不是做“另一个跨平台”框架，因为这样的框架做的不错的太多了，如 flutter，react-native ，weex。 但这些框架都有一个"特性", 绑定 UI 框架。业务上为了追求性能，为了追求能发多端，这是可以理解的。 
+两个主要功能：
 
-而 x-engine 要能完整的应用开发，当然也必须有 UI 框架， 这套 UI 框架任你选择， 比如 Taro，那你的 UI 定位就是 react 栈，且支持发布小程序，h5， react-native。
+1. 多端模块管理。
+2. 多端 api 与 DTO 的统一。
 
-x-engine 的目标就是怎么高效的原生模块化管理，开发，与维护。 打造一套拿来即用的企业级开源方案。
+![image-20200929021827767](assets/image-20200929021827767.png)
 
+x-engine 的目的并不是做“另一个跨平台”框架，
 
+因为这样的框架太多了，从时间上，先是 cordova，到 react-native, 到 flutter。
 
-其中的许多 hybrid 方案中耳熟能详的功能都以官方的模块存在。
+总结下来就这几种模式：
 
-- 支持微应用，支持以任何前端框架开发微应用
-- 支持业务热更新
-- 支持原生网络代理
-- 。。
+native + web  : cordova
 
-你也可以非常快速的自定义模块，比如将 react-native，weex 作为模块引入。这样你就拥有了 react-native 所有的能力。
+h5 -> native  : reactie-native  weex 
+
+self-render   : flutter
+
+native + web- : 小程序
+
+除了 cordova 年久失修外，这些模式都有一个"特性", 绑定 UI 框架。这给某些已存在的 UI 技术栈的集成带来了一定的困难。 如果仅仅是尝尝鲜，那对他们的集成与扩展又会是一件非常麻烦的事。
+
+基于 x-engine 的微应用（MicroApp）模块，则是为了解决这个问题而产生，x-engine 要能完整的应用开发，也必须有 UI 框架支持，但这套 UI 框架可以任你选择。比如， 使用 Taro。
+
+如果你觉得 h5 性能不好，你甚至可以直接加入 react-native 模块， 将 Taro UI 打包成 react-native bundle 放在 x-engine 的 RN 模块里运行。
 
 
 
 所以：
 
-x-engine 并不会试图再去造一套 “小程序” DSL，而是全力拥抱 H5 / SPA 标准。 这也意味着 Vue，React，Angular 任何 H5 / SPA 的开发框架都是我们服务对象。 
-
-x-engine 也可以支持小程序, 比如你的微应用使用 taro 编写。则可以直接输出到小程序。h5 输出到应用使用。
+x-engine 并不会试图再去造一套 “小程序” DSL，而是利用独立模块的能力集合成一个支持小程序的产品--微应用，微应用全力拥抱 H5 / SPA 标准。 这也意味着 Vue，React，Angular 任何 H5 / SPA 的开发框架都可以是我们选型对象。 
 
 x-engine 将会全面开源，包括核心源码。在出问题时，你能跟踪到任何一端直到不属于我们的源码。 
 

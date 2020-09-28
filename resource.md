@@ -44,3 +44,9 @@ https://github.com/jezzmemo/JJException
 
 ## java 规范
 https://hollischuang.github.io/toBeTopJavaer/#/basics/java-basic/value-of-vs-to-string
+
+
+
+## 工程组织方式
+
+参考  reactie native
