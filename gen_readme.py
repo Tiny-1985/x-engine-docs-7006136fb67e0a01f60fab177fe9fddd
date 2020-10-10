@@ -111,14 +111,10 @@ if __name__ == "__main__":
 
     arr = os.listdir("..")
     for d in arr:
-        if d.startswith("demo") or d.startswith(".") or d.endswith("docs") or "hybrid-template" in d:
-            continue
-        print(d)
-
- 
-        path = "../"+d
-        r = ReadmeAggregator(path,outputDir)
-        r.gen()
+        if "x-engine-module" in d and "x-engine-module-model" not in d:
+            path = "../"+d
+            r = ReadmeAggregator(path,outputDir)
+            r.gen()
 
 
 

@@ -1,40 +1,19 @@
 
 
 
+desc of tools, 推荐使用  typora  编辑文档, 媒体文件,如图片必须存放在md的相对目录 assets 下 如`[](./a.png)`
  
-gradle read version from config file 
-https://stackoverflow.com/questions/47492210/react-native-automatic-version-name-from-package-json-to-android-build-manifes
-``` groovy 
-// On top of your file import a JSON parser
-import groovy.json.JsonSlurper
-
-// Create an easy to use function
-def getVersionFromNpm() {
-    //  Read and parse package.json file from project root
-    def inputFile = new File("$rootDir/../package.json")
-    def packageJson = new JsonSlurper().parseText(inputFile.text)
-
-    // Return the version, you can get any value this way
-    return packageJson["version"]
-}
-
-android {
-    defaultConfig {
-        applicationId "your.app.id"
-        versionName getVersionFromNpm()
-    }
-}
+## namespace
 ```
-
-pod  config file 
-https://stackoverflow.com/questions/21405457/autoincrement-versioncode-with-gradle-extra-properties
+com.zkty.module.tools
+```
 
 
 # api
 
 
 `
-com.zkty.module.xxxx
+com.zkty.module.tools
 `
 
 
@@ -142,12 +121,11 @@ ui.showActionSheet({
 
     
 
-
 # iOS
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
 
 ```
-pod install x-engine-module-xxxx
+pod install x-engine-module-tools
 ```
 
 
@@ -156,7 +134,7 @@ pod install x-engine-module-xxxx
 
 gradle
 ```
-implementation x-engine-module-xxxx
+implementation x-engine-module-tools
 ```
 
 
