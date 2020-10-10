@@ -57,7 +57,7 @@ x-engine 将会全面开源，包括核心源码。在出问题时，你能跟�
 
 业务模板:[hybrid-tempalte](https://github.com/zkty-team/x-engine-hybrid-template)
 
-组件模板:[module-template](https://github.com/zkty-team/x-engine-module-template)
+模块模板:[module-template](https://github.com/zkty-team/x-engine-module-template)
 
 # 项目管理
 

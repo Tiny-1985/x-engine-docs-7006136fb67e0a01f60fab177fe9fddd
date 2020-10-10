@@ -1,9 +1,9 @@
-  - [bluetooth](./docs/modules/all/组件-bluetooth.md)
-  - [map-baidu](./docs/modules/all/组件-map-baidu.md)
+  - [bluetooth](./docs/modules/all/模块-bluetooth.md)
+  - [map-baidu](./docs/modules/all/模块-map-baidu.md)
 
 
 
-> 组件文档是从各 module 库的 readme 生成。
+> 模块文档是从各 module 库的 readme 生成。
 >
 > x-engine-module-xxxx
 >

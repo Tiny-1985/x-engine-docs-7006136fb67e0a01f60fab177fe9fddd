@@ -1,13 +1,13 @@
-- [engine](./docs/modules/all/组件-engine.md)
-- [network](./docs/modules/all/组件-network.md)
-- [nav](./docs/modules/all/组件-nav.md)
-- [ui](./docs/modules/all/组件-ui.md)
+- [engine](./docs/modules/all/模块-engine.md)
+- [network](./docs/modules/all/模块-network.md)
+- [nav](./docs/modules/all/模块-nav.md)
+- [ui](./docs/modules/all/模块-ui.md)
 
 
 
 
 
-> 组件文档是从各 module 库的 readme 生成。
+> 模块文档是从各 module 库的 readme 生成。
 >
 > x-engine-module-xxxx
 >

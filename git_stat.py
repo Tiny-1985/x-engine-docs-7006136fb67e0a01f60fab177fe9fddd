@@ -83,7 +83,7 @@ class ReadmeAggregator():
         return self.module_short_name
 
     def output_path(self):
-        return join(self.outputDir,"组件-"+self.module_short_name+".md")
+        return join(self.outputDir,"模块-"+self.module_short_name+".md")
 
 
     def gen(self):
@@ -98,7 +98,7 @@ class ReadmeAggregator():
             f.write(content)
         # gen _sidebar.md
         with open(join(self.outputDir,"_sidebar.md"),"a") as f:
-            f.write(f"- [{self.module_short_name}](./docs/modules/all/组件-{self.module_short_name}.md)\n")
+            f.write(f"- [{self.module_short_name}](./docs/modules/all/模块-{self.module_short_name}.md)\n")
         # print(f'{self.module_short_name}')
 
 
