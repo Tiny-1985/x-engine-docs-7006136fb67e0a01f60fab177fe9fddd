@@ -19,7 +19,7 @@
   - [规范-质量控制](./docs/versionlize/规范-质量控制.md)
   - [规范-git](./docs/versionlize/规范-git.md)
   <!--- [规范-git-仓库](./docs/versionlize/规范-git-仓库.md)-->
-  - [规范-版本](./docs/versionlize/规范-semver2.0.md)
+  <!--- [规范-版本](./docs/versionlize/规范-semver2.0.md)-->
   - [新人流程](./新人流程.md)
 - [**业务计划**](./开发计划.md)
 
