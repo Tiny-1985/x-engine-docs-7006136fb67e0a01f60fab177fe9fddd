@@ -14,9 +14,6 @@ pip3 install coge
 
 ```
 coge x-engine-module-template xxxx:camera @:x-engine-module-camera -w
-
-// TODO 你也可以指定远程 git 库做为模块
-coge https://github.com/zkty-team/x-engine-module-template.git xxxx:camera @:x-engine-module-camera -w
 ```
 
 

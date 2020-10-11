@@ -1,6 +1,15 @@
+## 安装 
+
+ ```
+git clone git@github.com:zkty-team/x-cli.git
+make install
+ ```
+
+
+
 ## 命令
 
-命令主要分为三个方向, 
+命令主要分为三个方向
 
 model  负责模型的生成
 
@@ -48,7 +57,7 @@ x-cli module publish
 
 ### model
 
-根据 [model.ts](#model.ts 语法)  定义， 生成 oc， java， js 三端统一接口与 readme.md。 
+根据 [model.ts](#model.ts语法)  定义， 生成 oc， java， js 三端统一接口与 readme.md。 
 
 h5:
 
@@ -80,7 +89,7 @@ gen/xengine__module_xxxx.m
 
 
 
-#### model.ts 语法
+#### model.ts语法
 
 model.ts 脚本的语法与 typescript 几乎一样。
 
