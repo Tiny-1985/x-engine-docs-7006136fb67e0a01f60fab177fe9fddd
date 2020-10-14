@@ -17,11 +17,21 @@ module 负责模块的管理
 
 app    负责应用的管理
 
-常用命令如下 
+可用命令发下
 
 ```
 // microap 环境搭建
-x-cli app init 
+x-cli app init <name>
+// 根据 model.ts 生成三端接口雇佣兵
+x-cli model model.ts
+
+```
+
+
+
+待发布命令如下
+
+```
 
 // 列举当前可用设备
 x-cli app devices
