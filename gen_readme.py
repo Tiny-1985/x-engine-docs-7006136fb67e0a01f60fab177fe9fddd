@@ -44,7 +44,11 @@ class ReadmeAggregator():
 
     def readReadMe(self,path):
         if os.path.isfile(path):
-            content = Path(path).read_text()
+            content = ""
+            try:
+                content = Path(path).read_text()
+            except Exception as e:
+                print(e)
             return  content
         return ""
 

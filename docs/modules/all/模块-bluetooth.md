@@ -34,26 +34,14 @@ https://stackoverflow.com/questions/21405457/autoincrement-versioncode-with-grad
 
 
 `
-undefined
+com.zkty.module.bluetooth
 `
 
 
 
-## getPhoneType
+## initBluetooth
 
-设备类型
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-
-## getSystemVersion
-
-系统版本
+初始化蓝牙
 
 	
 **参数说明**
@@ -63,21 +51,9 @@ undefined
 | __event__ | string |  | null |  |
 
 
-## getUDID
+## scanBluetoothDevice
 
-UDID
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-
-## getBatteryLevel
-
-电池电量
+扫描蓝牙设备
 
 	
 **参数说明**
@@ -87,126 +63,93 @@ UDID
 | __event__ | string |  | null |  |
 
 
-## getPreferredLanguage
+## closeBluetoothDevice
 
-当前语言
+关闭扫描
+
+	
+**无参数**
+
+
+
+
+## linkBluetoothDevice
+
+连接蓝牙设备
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
+| deviceID | string |  | "9E7A382F-1BBD-2431-D7B5-6415DDA4BEFB" |  |
 | __event__ | string |  | null |  |
 
 
-## getScreenWidth
+## cancelLinkBluetoothDevice
 
-屏幕宽度
+断开连接蓝牙设备
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
+| deviceID | string |  | "9E7A382F-1BBD-2431-D7B5-6415DDA4BEFB" |  |
 | __event__ | string |  | null |  |
 
 
-## getScreenHeight
+## discoverServices
 
-屏幕高度
+获取蓝牙设备服务
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
+| deviceID | string |  | "9E7A382F-1BBD-2431-D7B5-6415DDA4BEFB" |  |
 | __event__ | string |  | null |  |
 
 
-## getSafeAreaTop
+## discoverCharacteristics
 
-安全区域上边距
+获取对应蓝牙设备服务的特征
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
+| deviceID | string |  | "1A5D368E-68E3-069F-D963-E3781097CCD1" |  |
+| serviceId | string |  | "FFF0" |  |
 | __event__ | string |  | null |  |
 
 
-## getSafeAreaBottom
+## writeValueForCharacteristic
 
-安全区域下边距
+向对应特征值写入数据
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
+| characteristicId | string |  | "FFF1" |  |
 | __event__ | string |  | null |  |
 
 
-## getSafeAreaLeft
+## readCharacteristic
 
-安全区域左边距
+读取对应特征值
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
+| characteristicId | string |  | "FFF1" |  |
 | __event__ | string |  | null |  |
-
-
-## getSafeAreaRight
-
-安全区域右边距
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-
-## getStatusHeight
-
-状态栏高度
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-
-## getNavigationHeight
-
-导航条高度
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-
-## getTabBarHeight
-
-tabBar高度
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-    ll |  |
 
     
 
@@ -214,7 +157,7 @@ tabBar高度
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
 
 ```
-pod install x-engine-module-device
+pod install x-engine-module-bluetooth
 ```
 
 
@@ -223,7 +166,7 @@ pod install x-engine-module-device
 
 gradle
 ```
-implementation x-engine-module-device
+implementation x-engine-module-bluetooth
 ```
 
 

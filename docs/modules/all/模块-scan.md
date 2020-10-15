@@ -34,12 +34,12 @@ https://stackoverflow.com/questions/21405457/autoincrement-versioncode-with-grad
 
 
 `
-com.zkty.module.camera
+undefined
 `
 
 
 
-## openImagePicker
+## openScanView
 
 
 
@@ -48,11 +48,9 @@ com.zkty.module.camera
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| allowsEditing | bool | true | true |  |
-| savePhotosAlbum | bool | true | false |  |
-| cameraFlashMode | int | true | -1 |  |
-| cameraDevice | string | true | "back" |  |
-| __event__ | string |  | null |  |
+| __event__ | string |  |  | 扫码结果 xx(result) |
+
+    lt) |
 
     
 
@@ -60,7 +58,7 @@ com.zkty.module.camera
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
 
 ```
-pod install x-engine-module-camera
+pod install x-engine-module-scan
 ```
 
 
@@ -69,7 +67,7 @@ pod install x-engine-module-camera
 
 gradle
 ```
-implementation x-engine-module-camera
+implementation x-engine-module-scan
 ```
 
 

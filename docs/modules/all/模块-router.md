@@ -33,34 +33,12 @@ https://stackoverflow.com/questions/21405457/autoincrement-versioncode-with-grad
 # api
 
 
-`
-com.zkty.module.camera
-`
-
-
-
-## openImagePicker
-
-
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| allowsEditing | bool | true | true |  |
-| savePhotosAlbum | bool | true | false |  |
-| cameraFlashMode | int | true | -1 |  |
-| cameraDevice | string | true | "back" |  |
-| __event__ | string |  | null |  |
-
-    
 
 # iOS
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
 
 ```
-pod install x-engine-module-camera
+pod install x-engine-module-router
 ```
 
 
@@ -69,7 +47,7 @@ pod install x-engine-module-camera
 
 gradle
 ```
-implementation x-engine-module-camera
+implementation x-engine-module-router
 ```
 
 

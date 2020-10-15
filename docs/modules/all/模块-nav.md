@@ -16,12 +16,46 @@ changed from git subtree
 
 
 
+href 说明:
+
+``` js
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                            href                                             │
+├──────────┬──┬─────────────────────┬─────────────────────┬───────────────────────────┬───────┤
+│ protocol │  │        auth         │        host         │           path            │ hash  │
+│          │  │                     ├──────────────┬──────┼──────────┬────────────────┤       │
+│          │  │                     │   hostname   │ port │ pathname │     search     │       │
+│          │  │                     │              │      │          ├─┬──────────────┤       │
+│          │  │                     │              │      │          │ │    query     │       │
+"  https:   //    user   :   pass   @ sub.host.com : 8080   /p/a/t/h  ?  query=string   #hash "
+│          │  │          │          │   hostname   │ port │          │                │       │
+│          │  │          │          ├──────────────┴──────┤          │                │       │
+│ protocol │  │ username │ password │        host         │          │                │       │
+├──────────┴──┼──────────┴──────────┼─────────────────────┤          │                │       │
+│   origin    │                     │       origin        │ pathname │     search     │ hash  │
+├─────────────┴─────────────────────┴─────────────────────┴──────────┴────────────────┴───────┤
+│                                            href                                             │
+└─────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+
+
+支持以下路由href:
+
+``` 
+file://xxx/../index.html
+http://xxx/../index.html
+https://xxx/../index.html
+ftp://xxx/../index.html
+```
+
+
 
 # api
 
 
 `
-com.zkty.module.nav
+undefined
 `
 
 
@@ -160,6 +194,8 @@ com.zkty.module.nav
 | isInput | bool |  | true | 搜索框是否添加点击事件 |
 | becomeFirstResponder | bool |  | false | 搜索框是否获取焦点 |
 | __event__ | string | true |  |  |
+
+    |  |
 
     
 

@@ -34,25 +34,67 @@ https://stackoverflow.com/questions/21405457/autoincrement-versioncode-with-grad
 
 
 `
-com.zkty.module.camera
+com.zkty.module.lope
 `
 
 
 
-## openImagePicker
+## customOpenDoor
+
+ function openDoor(){
+     window.openDoor = (...args) => {
+     lope
+       .openDoor(...args)
+       .then((res) => {
+         document.getElementById("debug_text").innerText = "ret:"+res;
+       });
+   };
+ }
+
+	
+**无参数**
 
 
+
+
+## lightLift
+
+
+
+	
+**无参数**
+
+
+
+
+## haveArgRetPrimitive
+
+ have args ret primitive
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| allowsEditing | bool | true | true |  |
-| savePhotosAlbum | bool | true | false |  |
-| cameraFlashMode | int | true | -1 |  |
-| cameraDevice | string | true | "back" |  |
-| __event__ | string |  | null |  |
+| title | string |  | "abc" |  标题 |
+| itemList | Array\<string\> | true |  |  子标题? |
+| content | string | true |  |  内容 |
+| __event__ |  |  |  |  点击子标题回调函数 |
+
+
+## openDoor
+
+ have args ret Object
+
+	
+**参数说明**
+
+| name                        | type      | optional | default   | comment  |
+| --------------------------- | --------- | -------- | --------- |--------- |
+| title | string |  | "abc" |  标题 |
+| itemList | Array\<string\> | true |  |  子标题? |
+| content | string | true |  |  内容 |
+| __event__ |  |  |  |  点击子标题回调函数 |
 
     
 
@@ -60,7 +102,7 @@ com.zkty.module.camera
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
 
 ```
-pod install x-engine-module-camera
+pod install x-engine-module-lope
 ```
 
 
@@ -69,7 +111,7 @@ pod install x-engine-module-camera
 
 gradle
 ```
-implementation x-engine-module-camera
+implementation x-engine-module-lope
 ```
 
 

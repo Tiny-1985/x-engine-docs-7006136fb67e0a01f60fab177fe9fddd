@@ -29,7 +29,7 @@
 
 
 `
-com.zkty.module.network
+undefined
 `
 
 
@@ -256,6 +256,8 @@ network.getRequest({
 | filepath | string | true |  | 上传文件路径 |
 | fileBaseStr | string | true |  | 上传文件的base64 |
 | __event__ | string | true |  | progress: (progress:float)=>void |
+
+    =>void |
 
     
 
