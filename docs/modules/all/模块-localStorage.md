@@ -29,9 +29,9 @@ com.zkty.module.localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | "key" |  |
-| value | string |  | "value" |  |
-| isPublic | bool |  | false |  |
+| key | string |  | key |  |
+| value | string |  | value |  |
+| isPublic | bool |  |  |  |
 
 
 ## getLocalStorage
@@ -43,8 +43,8 @@ com.zkty.module.localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | "key" |  |
-| isPublic | bool |  | false |  |
+| key | string |  | key |  |
+| isPublic | bool |  |  |  |
 
 
 ## removeLocalStorageItem
@@ -56,8 +56,8 @@ com.zkty.module.localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | "all" |  |
-| isPublic | bool |  | false |  |
+| key | string |  | all |  |
+| isPublic | bool |  |  |  |
 
 
 ## removeLocalStorageAll
@@ -69,35 +69,8 @@ com.zkty.module.localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | "all" |  |
-| isPublic | bool |  | false |  |
-
-
-## _testSetOtherIDLocalStorage
-
- set
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | "key" |  |
-| value | string |  | "value" |  |
-| isPublic | bool |  | false |  |
-
-
-## _testGetOtherIDLocalStorage
-
- get
-
-	
-**参数说明**
-
-| name                        | type      | optional | default   | comment  |
-| --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | "key" |  |
-| isPublic | bool |  | false |  |
+| key | string |  | all |  |
+| isPublic | bool |  |  |  |
 
     
 

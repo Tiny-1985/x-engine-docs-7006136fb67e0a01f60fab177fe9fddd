@@ -1,38 +1,77 @@
 
 
+统一所有的跳转
 
- 
-gradle read version from config file 
-https://stackoverflow.com/questions/47492210/react-native-automatic-version-name-from-package-json-to-android-build-manifes
-``` groovy 
-// On top of your file import a JSON parser
-import groovy.json.JsonSlurper
+##### 规则
 
-// Create an easy to use function
-def getVersionFromNpm() {
-    //  Read and parse package.json file from project root
-    def inputFile = new File("$rootDir/../package.json")
-    def packageJson = new JsonSlurper().parseText(inputFile.text)
+- 跳 h5
+  - https://..
+- 跳微应用
+  - appid + 路径 + 参数
+- 跳 uniapp
+  - appid + 路径 + 参数
+- 跳 [微信小程序](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Launching_a_Mini_Program/iOS_Development_example.html)
+  - userName + 路径 + 参数
+- 跳原生界面
+  - iOS
+    - 类名 + 参数
+  - android
+    - 类名 + 参数
 
-    // Return the version, you can get any value this way
-    return packageJson["version"]
+![image-20201010170737644](assets/image-20201010170737644.png)
+
+参数:
+
+````
+{
+  type: enum (native | h5 | microapp | uni | wx ),  // 类型
+  uri:  string (url | appid | wx_username | 'XViewController,XActivity'), // 资源名
+  path: string                         // 路径 /abc  /abc?a=
 }
+````
 
-android {
-    defaultConfig {
-        applicationId "your.app.id"
-        versionName getVersionFromNpm()
-    }
-}
-```
+> 注： 如果 uni app 需要支持统一路由，则需要将 uni 请求代理到统一路由模块。
 
-pod  config file 
-https://stackoverflow.com/questions/21405457/autoincrement-versioncode-with-gradle-extra-properties
+[跳微信小程序需知](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Launching_a_Mini_Program/Launching_a_Mini_Program.html)
+
+**跳转规则**
+
+1. 对于已通过认证的开放平台账号，其移动应用可以跳转至任何合法的小程序，且不限制跳转的小程序数量。
+2. 对于未通过认证的开放平台账号，其移动应用仅可以跳转至同一开放平台账号下小程序。
+
+>  注意：若移动应用未上架，则最多只能跳转小程序100次/天，用于满足调试需求。
+
+
+
+外部需求:
+
+参看: [opensdk 接入指南](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/iOS.html)
+
 
 
 # api
 
 
+`
+com.zkty.module.router
+`
+
+
+
+## openTargetRouter
+
+跳转页面.
+
+	
+**参数说明**
+
+| name                        | type      | optional | default   | comment  |
+| --------------------------- | --------- | -------- | --------- |--------- |
+| type | string |  | 0 | 跳转类型 |
+| uri | string |  | https://www.baidu.com | 跳转目标 |
+| path | string |  |  | 跳转参数 |
+
+    
 
 # iOS
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.

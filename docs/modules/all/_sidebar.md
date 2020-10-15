@@ -1,7 +1,6 @@
 - [offline](./docs/modules/all/模块-offline.md)
 - [scan](./docs/modules/all/模块-scan.md)
 - [device](./docs/modules/all/模块-device.md)
-- [bak](./docs/modules/all/模块-bak.md)
 - [ui](./docs/modules/all/模块-ui.md)
 - [engine](./docs/modules/all/模块-engine.md)
 - [dcloud](./docs/modules/all/模块-dcloud.md)
