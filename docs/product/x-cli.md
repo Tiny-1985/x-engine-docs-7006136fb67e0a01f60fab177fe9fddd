@@ -1,8 +1,7 @@
 ## 安装 
 
  ```
-git clone git@github.com:zkty-team/x-cli.git
-make install
+npm install @zkty-team/x-cli -g 
  ```
 
 
