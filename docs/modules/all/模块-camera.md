@@ -15,7 +15,7 @@ com.zkty.module.camera
 
 
 
-	
+
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
@@ -26,7 +26,7 @@ com.zkty.module.camera
 | cameraDevice | string | true | "back" |  |
 | __event__ | string |  | null |  |
 
-    
+​    
 
 # iOS
 介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
@@ -45,3 +45,9 @@ implementation x-engine-module-camera
 ```
 
 
+
+http://sit.linli580.com:9995/app-b-notice/
+
+http://sit.linli580.com:9996/app-c-owner-cert/
+http://sit.linli580.com:9997/app-b-real-estate-archive
+http://sit.linli580.com:9998/app-b-owner-archive
