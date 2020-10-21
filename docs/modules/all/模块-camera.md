@@ -44,10 +44,3 @@ gradle
 implementation x-engine-module-camera
 ```
 
-
-
-http://sit.linli580.com:9995/app-b-notice/
-
-http://sit.linli580.com:9996/app-c-owner-cert/
-http://sit.linli580.com:9997/app-b-real-estate-archive
-http://sit.linli580.com:9998/app-b-owner-archive
