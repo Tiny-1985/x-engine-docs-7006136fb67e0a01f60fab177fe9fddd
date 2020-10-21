@@ -1,5 +1,9 @@
 
 
+**基座扫描测试**
+<div id='modulename' style='display:none'>router</div>
+<img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+
 统一所有的跳转
 
 ##### 规则
@@ -49,12 +53,12 @@
 
 
 
-# api
+# JS
 
 
-`
-com.zkty.module.router
-`
+``` bash
+npm install @zkty-team/com-zkty-module-router
+```
 
 
 
@@ -67,7 +71,7 @@ com.zkty.module.router
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| type | string |  | 0 | 跳转类型 |
+| type | string |  | native | 跳转类型 native | h5 | microapp | uni | wx  |
 | uri | string |  | https://www.baidu.com | 跳转目标 |
 | path | string |  |  | 跳转参数 |
 

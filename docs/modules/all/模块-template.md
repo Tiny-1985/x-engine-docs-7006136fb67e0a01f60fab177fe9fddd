@@ -1,13 +1,17 @@
 
 
+**基座扫描测试**
+<div id='modulename' style='display:none'>template</div>
+<img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
 
 
-# api
+
+# JS
 
 
-`
-com.zkty.module.xxxx
-`
+``` bash
+npm install @zkty-team/com-zkty-module-xxxx
+```
 
 
 
@@ -50,10 +54,10 @@ com.zkty.module.xxxx
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| title | string |  | "hello" |  标题 |
+| title | string |  | hello |  标题 |
 | itemList | Array\<string\> | true | ["hello","world","he"] |  子标题? |
-| content | string | true | "content" |  内容 |
-| __event__ |  |  | null |  点击子标题回调函数 |
+| content | string | true | content |  内容 |
+| \_\_event\_\_ |  |  |  |  点击子标题回调函数 |
 
 
 ## haveArgRetPrimitive
@@ -65,10 +69,10 @@ com.zkty.module.xxxx
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| title | string |  | "hello" |  标题 |
+| title | string |  | hello |  标题 |
 | itemList | Array\<string\> | true | ["hello","world","he"] |  子标题? |
-| content | string | true | "content" |  内容 |
-| __event__ |  |  | null |  点击子标题回调函数 |
+| content | string | true | content |  内容 |
+| \_\_event\_\_ |  |  |  |  点击子标题回调函数 |
 
 
 ## haveArgRetSheetDTO
@@ -80,10 +84,10 @@ com.zkty.module.xxxx
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| title | string |  | "hello" |  标题 |
+| title | string |  | hello |  标题 |
 | itemList | Array\<string\> | true | ["hello","world","he"] |  子标题? |
-| content | string | true | "content" |  内容 |
-| __event__ |  |  | null |  点击子标题回调函数 |
+| content | string | true | content |  内容 |
+| \_\_event\_\_ |  |  |  |  点击子标题回调函数 |
 
 
 ## showActionSheet
@@ -107,10 +111,10 @@ ui.showActionSheet({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| title | string |  | "hello" |  标题 |
+| title | string |  | hello |  标题 |
 | itemList | Array\<string\> | true | ["hello","world","he"] |  子标题? |
-| content | string | true | "content" |  内容 |
-| __event__ |  |  | null |  点击子标题回调函数 |
+| content | string | true | content |  内容 |
+| \_\_event\_\_ |  |  |  |  点击子标题回调函数 |
 
     
 

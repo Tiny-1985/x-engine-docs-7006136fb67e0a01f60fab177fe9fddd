@@ -13,9 +13,13 @@ import glob
 
 tmplt = """
 
+**基座扫描测试**
+<div id='modulename' style='display:none'>{module_name}</div>
+<img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+
 {root_readme}
 
-# api
+# JS
 
 {h5_readme}
 
@@ -73,13 +77,19 @@ class ReadmeAggregator():
         self.cp_assets(path)
         return self.readReadMe(path)
     
+    def cp_assets(self,readmepath):
+        assetsPath= join(dirname(readmepath),"assets")
+        subprocess.Popen(["cp","-r",assetsPath,self.outputDir ]).communicate()
+
     # def handle_img(self,path,out):
         # subprocess.Popen(["python3","/usr/local/bin/md_wash",path, "-c", "-u", "-o",out ]).communicate()
         # print("path",path,"out",out+"/assets/*",join(self.outputDir,"assets"))
         # subprocess.Popen(["cp","-r",out+"/assets/",join(self.outputDir,"assets/") ]).communicate()
-    def cp_assets(self,readmepath):
-        assetsPath= join(dirname(readmepath),"assets")
-        subprocess.Popen(["cp","-r",assetsPath,self.outputDir ]).communicate()
+    def gen_dist(self):
+        # os.system(f"cd {self.folder_path} && yarn build {self.folder_path} && cp -r {self.folder_path} /h5/dist/{self.outputDir}/{self.get_short_module_name()}")
+        # print(f"------{self.outputDir}")
+        os.system(f"pushd {self.folder_path}  && yarn upgrade @zkty-team/x-engine-module-engine && x-cli model model.ts && yarn md && popd && rm -rdf {self.outputDir}/dist/{self.get_short_module_name()} &&  cp -r {self.folder_path}/h5/dist {self.outputDir}/dist/{self.get_short_module_name()}")
+
 
 
 
@@ -95,8 +105,10 @@ class ReadmeAggregator():
         h5_readme      = self.gen_h5()
         ios_readme     = self.gen_iOS()
         android_readme = self.gen_android()
+        module_name    = self.get_short_module_name()
+        self.gen_dist()
 
-        content = tmplt.format(root_readme = root_readme,h5_readme = h5_readme, ios_readme = ios_readme, android_readme = android_readme)
+        content = tmplt.format(root_readme = root_readme,h5_readme = h5_readme, ios_readme = ios_readme, android_readme = android_readme, module_name=module_name)
         print(self.output_path())
         with open(self.output_path(),"w") as f:
             f.write(content)

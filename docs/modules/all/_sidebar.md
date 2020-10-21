@@ -1,5 +1,6 @@
 - [offline](./docs/modules/all/模块-offline.md)
 - [scan](./docs/modules/all/模块-scan.md)
+- [phone](./docs/modules/all/模块-phone.md)
 - [device](./docs/modules/all/模块-device.md)
 - [ui](./docs/modules/all/模块-ui.md)
 - [engine](./docs/modules/all/模块-engine.md)
@@ -15,4 +16,3 @@
 - [lope](./docs/modules/all/模块-lope.md)
 - [camera](./docs/modules/all/模块-camera.md)
 - [protocols](./docs/modules/all/模块-protocols.md)
-- [server](./docs/modules/all/模块-server.md)

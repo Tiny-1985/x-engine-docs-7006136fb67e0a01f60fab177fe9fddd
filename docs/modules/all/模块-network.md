@@ -1,5 +1,9 @@
 
 
+**基座扫描测试**
+<div id='modulename' style='display:none'>network</div>
+<img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+
 # 统一网络
 
 网络是除缓存外最核心的一块功能. 
@@ -25,12 +29,12 @@
 
 
 
-# api
+# JS
 
 
-`
-undefined
-`
+``` bash
+npm install @zkty-team/com-zkty-module-network
+```
 
 
 
@@ -62,8 +66,8 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "patch" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | patch | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
 
@@ -90,8 +94,8 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "patch" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | patch | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
 
@@ -114,8 +118,8 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "patch" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | patch | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
 
@@ -138,8 +142,8 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "patch" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | patch | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
 
@@ -162,8 +166,8 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "patch" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | patch | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
 
@@ -186,8 +190,8 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "patch" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | patch | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
 
@@ -220,12 +224,12 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求url |
-| method | string | true | "POST" | 请求方法 |
+| url | string |  |  | 请求url |
+| method | string | true | POST | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求haeders |
 | params | Map\<string,string\> | true |  | 请求params |
-| __event__ | string | true |  | progress: (progress:float)=>void |
-| isNeedBase64 | bool |  | false | 是否需要base64的内容 |
+| \_\_event\_\_ | string | true |  | progress: (progress:float)=>void |
+| isNeedBase64 | bool |  |  | 是否需要base64的内容 |
 
 
 ## uploadRequest
@@ -248,16 +252,14 @@ network.getRequest({
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| url | string |  | "" | 请求地址 |
-| method | string | true | "POST" | 请求方法 |
+| url | string |  |  | 请求地址 |
+| method | string | true | POST | 请求方法 |
 | headers | Map\<string,string\> | true |  | 请求头 |
 | params | Map\<string,string\> | true |  | 请求参数 |
 | filename | string |  |  | 上传文件名称 |
 | filepath | string | true |  | 上传文件路径 |
 | fileBaseStr | string | true |  | 上传文件的base64 |
-| __event__ | string | true |  | progress: (progress:float)=>void |
-
-    =>void |
+| \_\_event\_\_ | string | true |  | progress: (progress:float)=>void |
 
     
 

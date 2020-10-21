@@ -1,14 +1,18 @@
 
 
+**基座扫描测试**
+<div id='modulename' style='display:none'>device</div>
+<img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
 
 
 
-# api
+
+# JS
 
 
-`
-undefined
-`
+``` bash
+npm install @zkty-team/com-zkty-module-device
+```
 
 
 
@@ -21,7 +25,7 @@ undefined
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getSystemVersion
@@ -33,7 +37,7 @@ undefined
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getUDID
@@ -45,7 +49,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getBatteryLevel
@@ -57,7 +61,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getPreferredLanguage
@@ -69,7 +73,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getScreenWidth
@@ -81,7 +85,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getScreenHeight
@@ -93,7 +97,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getSafeAreaTop
@@ -105,7 +109,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getSafeAreaBottom
@@ -117,7 +121,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getSafeAreaLeft
@@ -129,7 +133,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getSafeAreaRight
@@ -141,7 +145,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getStatusHeight
@@ -153,7 +157,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getNavigationHeight
@@ -165,7 +169,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
+| \_\_event\_\_ | string |  |  |  |
 
 
 ## getTabBarHeight
@@ -177,9 +181,7 @@ tabBar高度
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| __event__ | string |  | null |  |
-
-    ll |  |
+| \_\_event\_\_ | string |  |  |  |
 
     
 

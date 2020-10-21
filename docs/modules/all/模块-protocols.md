@@ -1,5 +1,9 @@
 
 
+**基座扫描测试**
+<div id='modulename' style='display:none'>protocols</div>
+<img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+
 ## desc
 protocols 组件是一个纯接口集合.为了解决藕系统内冲突的功能所设计.
 所有引擎里用到的第三方库都需要做为 protocols 接口.
@@ -13,7 +17,7 @@ protocols 组件是一个纯接口集合.为了解决藕系统内冲突的功能
 实现了相同 protocol 的组件只有一个会被初始化.
 
 
-# api
+# JS
 
 
 
