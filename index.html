@@ -82,7 +82,10 @@
           function (hook, vm) {
             hook.doneEach(function () {
               // document.getElementsByClassName('collapse')[0].classList.remove('collapse');
-              document.getElementById('qrimg').src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+window.location.href.split("/")[0]+"//"+window.location.host+'/docs/modules/all/dist/'+document.getElementById("modulename").innerText+'/index.html';
+              var indexsrc= window.location.href.split("/")[0]+"//"+window.location.host+'/docs/modules/all/dist/'+document.getElementById("modulename").innerText+'/index.html';
+              var qrsrc='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+ indexsrc;
+                document.getElementById('qrimg').src =qrsrc;
+                document.getElementById('qrlink').href=indexsrc;
             });
 
             hook.afterEach(function (html) {

@@ -5,9 +5,7 @@
   - [开发](./docs/modules/模块-开发.md)
   - [使用](./docs/modules/模块-使用.md)
   - [仓库](./docs/modules/模块-仓库.md)
-  - [所有模块-api](./docs/modules/all/模块-engine.md)
-    - [通用模块](./docs/modules/common/README.md)
-    - [可选模块](./docs/modules/optional/README.md)
+  - [模块-api](./docs/modules/all/模块-scan.md)
 - **产品**
   - [微应用](./docs/product/微应用.md)
   - [x-cli](./docs/product/x-cli.md)

@@ -23,7 +23,6 @@ app    负责应用的管理
 x-cli app init <name>
 // 根据 model.ts 生成三端接口雇佣兵
 x-cli model model.ts
-
 ```
 
 

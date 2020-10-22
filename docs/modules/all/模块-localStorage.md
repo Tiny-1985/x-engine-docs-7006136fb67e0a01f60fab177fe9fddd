@@ -3,14 +3,17 @@
 **基座扫描测试**
 <div id='modulename' style='display:none'>localstorage</div>
 <img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+<a id='qrlink' href="about:none">link of QR</a>
 
-## desc
-localstorage 会根据 host 自动加入 namespace.
-默认情况:
-http 微应用, 则会使用 host的倒序 作为 namespace.
-离线 微应用, 则会使用 appid 作为 namespace.
+localstorage 会根据微应用的 appid 自动加入 namespace.
 
-也可以在调用函数时,传入namespace, 则优先使用
+也可以向全局写入, 用于应用间的数据共享.
+
+微应用A 无法访问微应用 B的数据.
+
+
+
+
 
 
 
@@ -24,7 +27,7 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 
 
-## setLocalStorage
+## set
 
  set
 
@@ -33,12 +36,12 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | key |  |
-| value | string |  | value |  |
-| isPublic | bool |  |  |  |
+| key | string |  | key | 存储设置key值 |
+| value | string |  | value | 存储设置value值 |
+| isPublic | bool |  |  | 是否数据共享 |
 
 
-## getLocalStorage
+## get
 
  get
 
@@ -47,11 +50,11 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | key |  |
-| isPublic | bool |  |  |  |
+| key | string |  | key | 要获取的存储值的key值 |
+| isPublic | bool |  |  | 要获取的存储值是否是共享数据 |
 
 
-## removeLocalStorageItem
+## remove
 
  remoteItem
 
@@ -60,20 +63,19 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | all |  |
-| isPublic | bool |  |  |  |
+| key | string |  | key | 要删除的存储值的key值 |
+| isPublic | bool |  |  | 要删除的存储值是否是共享数据 |
 
 
-## removeLocalStorageAll
+## removeAll
 
- remoteAll
+ removeAll
 
 	
 **参数说明**
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| key | string |  | all |  |
 | isPublic | bool |  |  |  |
 
     
@@ -82,6 +84,5 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 
 # android
-hello 
 
 

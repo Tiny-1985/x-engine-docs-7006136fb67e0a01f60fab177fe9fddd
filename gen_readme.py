@@ -16,6 +16,7 @@ tmplt = """
 **基座扫描测试**
 <div id='modulename' style='display:none'>{module_name}</div>
 <img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+<a id='qrlink' href="about:none">link of QR</a>
 
 {root_readme}
 
@@ -80,18 +81,14 @@ class ReadmeAggregator():
     def cp_assets(self,readmepath):
         assetsPath= join(dirname(readmepath),"assets")
         subprocess.Popen(["cp","-r",assetsPath,self.outputDir ]).communicate()
+        # os.system(f"rsync -av --progress {assetsPath} {self.outputDir}")
 
     # def handle_img(self,path,out):
         # subprocess.Popen(["python3","/usr/local/bin/md_wash",path, "-c", "-u", "-o",out ]).communicate()
         # print("path",path,"out",out+"/assets/*",join(self.outputDir,"assets"))
         # subprocess.Popen(["cp","-r",out+"/assets/",join(self.outputDir,"assets/") ]).communicate()
     def gen_dist(self):
-        # os.system(f"cd {self.folder_path} && yarn build {self.folder_path} && cp -r {self.folder_path} /h5/dist/{self.outputDir}/{self.get_short_module_name()}")
-        # print(f"------{self.outputDir}")
-        os.system(f"pushd {self.folder_path}  && yarn upgrade @zkty-team/x-engine-module-engine && x-cli model model.ts && yarn md && popd && rm -rdf {self.outputDir}/dist/{self.get_short_module_name()} &&  cp -r {self.folder_path}/h5/dist {self.outputDir}/dist/{self.get_short_module_name()}")
-
-
-
+        os.system(f"pushd {self.folder_path}  &&  x-cli model model.ts && yarn md && popd && rm -rdf {self.outputDir}/dist/{self.get_short_module_name()} &&  cp -fr {self.folder_path}/h5/dist {self.outputDir}/dist/{self.get_short_module_name()}")
 
     def get_short_module_name(self):
         return self.module_short_name
@@ -126,8 +123,12 @@ if __name__ == "__main__":
         f.write("")
 
     arr = os.listdir("..")
+    exclude=['x-engine-module-offline','x-engine-module-protocols']
+    include=['x-engine-module-ui','x-engine-module-router','x-engine-module-nav','x-engine-module-localstorage','x-engine-module-scan','x-engine-module-network']
     for d in arr:
-        if "x-engine-module" in d and "x-engine-module-model" not in d:
+        # if d in include:
+            # continue
+        if "x-engine-module" in d and "template" not in d:
             path = "../"+d
             r = ReadmeAggregator(path,outputDir)
             r.gen()

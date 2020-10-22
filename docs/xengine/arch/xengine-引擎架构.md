@@ -16,15 +16,7 @@ x-engine 理论上只负责管理模块， 但因为当前业务需求，我们�
 
 模块开发可见： [模块-开发.md](../../modules/模块-开发.md) 
 
-在文档里模块被分为[通用模块](./docs/modules/模块-规范.md#模块分类),与[可选模块](./docs/modules/模块-规范.md#模块分类)
-
-通用模块示例:[引擎](./docs/modules/common/模块-引擎.md)  [统一网络](./docs/modules/common/模块-统一网络.md)  [原生导航](./docs/modules/common/模块-原生导航.md) ...
-
-可选模块示例: [蓝牙](./docs/modules/optional/模块-蓝牙.md)  ...
-
-通用模块与可选模块并没有本质差别， 只是通用模块会集成到 hybrid-template  中， 官方保证了模块间的兼容性。 
-
-引擎本身就有有可能会依赖某些模块，如 network， 被依赖的模块会以接口的形式被引用，用户如果需要自定义自己的 network 模块，则必须实现相应的接口，在 iOS 里表现为 protocol 接口，在 android 里则是 interface接口， 接口定义在引擎里。
+引擎本身就有有可能会依赖某些模块，如 network， 被依赖的模块会以接口的形式被引用，用户如果需要自定义自己的 network 模块，则必须实现相应的接口，在 iOS 里表现为 protocol 接口，在 android 里则是 interface 接口， 接口定义在引擎里。
 
 这样做的原因是： 
 
@@ -36,27 +28,44 @@ x-engine 理论上只负责管理模块， 但因为当前业务需求，我们�
 
 ###  自动注册模块
 
-现在的 xengine 里模块是怎么自动注册的呢？
+xengine 里模块是怎么自动注册的呢？
 
-通过约定文件名，没错！暴力如斯！
+参考过一些优秀的第三方库。 有在静态区写值，有用注解的。但都有一个比较麻烦的问题。 怎么统一 android 与 iOS。
 
-以 `__xengine__module_` 为类名开头。 模块则会自动注册。
+最终还是决定通过约定文件名。扫描 runtime。
+
+以 `__xengine__module_` 为类名开头。 模块则会自动注册，简单高效。
 
 创建类 继承 `xengine__module_BaseModule`。例如：`__xengine__module_UIModule`
 
-虽然简单，但在 iOS 里与 android 都非常容易实现。
+在 iOS 里与 android 都非常容易实现。
+
+为后期优化也提供了充足的空间， 比如， 在首次启动后的扫描结果缓存。
 
 
 
 ### 依赖注入
 
-依赖注入是 spring 最强大的功能。 xengine 里暂时并未完全实现。
+依赖注入是模块管理最强大的功能。 分三个等级。
 
-spring 能够注入循环依赖， 在当前框架模型下暂时未用到。
+自我实例化。
 
-TODO: 整合市面上已存的 android 注入框架，与 iOS 注入框架。
+依赖实例化注入。
 
-现在的注入还是需要手工注入，因为不考虑模块的循环依赖， 所以，我们只需在所有模块初始化后，一一回调即可，见 [模块-engine.md](../../modules/all/模块-engine.md) 
+循环依赖实例化注入。 
+
+
+
+在 xengine 中， 依赖实例化注入需要在模块里写点代码，暂时不考虑模块的循环依赖。非常够用。
+
+```
+// 模块自我实例化完成回调
+- (void) onAllModulesInited;
+```
+
+
+
+见 [模块-engine.md](../../modules/all/模块-engine.md) 
 
  
 

@@ -3,13 +3,17 @@
 **基座扫描测试**
 <div id='modulename' style='display:none'>router</div>
 <img id='qrimg' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.44.52:3000/docs/modules/all/dist/ui/index.html'></img>
+<a id='qrlink' href="about:none">link of QR</a>
 
-统一所有的跳转
+统一所有的跳转, router 与 nav 在路由功能有一些重叠的地方. 但 nav 更加关注于微应用内的路由. 而 router 更关注应用间的路由.
+
+
 
 ##### 规则
 
 - 跳 h5
   - https://..
+  - http://..
 - 跳微应用
   - appid + 路径 + 参数
 - 跳 uniapp
@@ -28,9 +32,10 @@
 
 ````
 {
-  type: enum (native | h5 | microapp | uni | wx ),  // 类型
+  type: string (native | h5 | microapp | uni | wx ),  // 类型
   uri:  string (url | appid | wx_username | 'XViewController,XActivity'), // 资源名
-  path: string                         // 路径 /abc  /abc?a=
+  path: string, // 路径 /abc  /abc?a=1
+  args: string  // 暂时未使用, 简单参数通过 path 传递
 }
 ````
 
@@ -71,26 +76,15 @@ npm install @zkty-team/com-zkty-module-router
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| type | string |  | native | 跳转类型 native | h5 | microapp | uni | wx  |
+| type | string |  | h5 | 跳转类型 |
 | uri | string |  | https://www.baidu.com | 跳转目标 |
 | path | string |  |  | 跳转参数 |
 
     
 
 # iOS
-介绍在引入模块时,iOS 方面要做的事.如工程权限配置等.
-
-```
-pod install x-engine-module-router
-```
 
 
 # android
-介绍在引入模块时,android 方面要做的事.如工程权限配置等.
-
-gradle
-```
-implementation x-engine-module-router
-```
 
 
