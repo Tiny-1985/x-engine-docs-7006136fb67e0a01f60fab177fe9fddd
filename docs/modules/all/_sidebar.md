@@ -1,4 +1,5 @@
 - [scan](./docs/modules/all/模块-scan.md)
+- [dcloud](./docs/modules/all/模块-dcloud.md)
 - [nav](./docs/modules/all/模块-nav.md)
 - [router](./docs/modules/all/模块-router.md)
 - [localstorage](./docs/modules/all/模块-localstorage.md)
