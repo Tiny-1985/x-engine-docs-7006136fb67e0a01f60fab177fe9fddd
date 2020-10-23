@@ -29,7 +29,24 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 ## set
 
- set
+
+
+**demo**
+``` js
+ {
+  window.set = () => {
+    localstorage
+      .set({
+        key: "key",
+        value: "value",
+        isPublic: false,
+      })
+      .then((res) => {
+        document.getElementById("debug_text").innerText = JSON.stringify(res);
+      });
+  };
+}
+``` 
 
 	
 **参数说明**
@@ -43,7 +60,23 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 ## get
 
- get
+
+
+**demo**
+``` js
+ {
+  window.get = () => {
+    localstorage
+      .get({
+        key: "key",
+        isPublic: false,
+      })
+      .then((res) => {
+        document.getElementById("debug_text").innerText = JSON.stringify(res);
+      });
+  };
+}
+``` 
 
 	
 **参数说明**
@@ -56,7 +89,23 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 ## remove
 
- remoteItem
+
+
+**demo**
+``` js
+ {
+  window.remove = () => {
+    localstorage
+      .remove({
+        key: "key",
+        isPublic: false,
+      })
+      .then((res) => {
+        document.getElementById("debug_text").innerText = JSON.stringify(res);
+      });
+  };
+}
+``` 
 
 	
 **参数说明**
@@ -69,7 +118,22 @@ npm install @zkty-team/com-zkty-module-localstorage
 
 ## removeAll
 
- removeAll
+
+
+**demo**
+``` js
+ {
+  window.removeAll = () => {
+    localstorage
+      .removeAll({
+        isPublic: false,
+      })
+      .then((res) => {
+        document.getElementById("debug_text").innerText = JSON.stringify(res);
+      });
+  };
+}
+``` 
 
 	
 **参数说明**

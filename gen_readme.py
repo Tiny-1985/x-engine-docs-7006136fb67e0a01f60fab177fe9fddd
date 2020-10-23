@@ -124,11 +124,11 @@ if __name__ == "__main__":
 
     arr = os.listdir("..")
     exclude=['x-engine-module-offline','x-engine-module-protocols']
-    include=['x-engine-module-ui','x-engine-module-router','x-engine-module-nav','x-engine-module-localstorage','x-engine-module-scan','x-engine-module-network']
+    include=['x-engine-module-router','x-engine-module-nav','x-engine-module-localstorage','x-engine-module-scan','x-engine-module-network','x-engine-module-camera']
     for d in arr:
-        # if d in include:
+        if d in include:
             # continue
-        if "x-engine-module" in d and "template" not in d:
+        # if "x-engine-module" in d and "template" not in d:
             path = "../"+d
             r = ReadmeAggregator(path,outputDir)
             r.gen()
