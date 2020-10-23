@@ -128,7 +128,7 @@ if __name__ == "__main__":
     for d in arr:
         if d in include:
             # continue
-        # if "x-engine-module" in d and "template" not in d:
+        # if "x-engine-module" in d and "template" not in d and "protocols" not in d and "offline" not in d:
             path = "../"+d
             r = ReadmeAggregator(path,outputDir)
             r.gen()

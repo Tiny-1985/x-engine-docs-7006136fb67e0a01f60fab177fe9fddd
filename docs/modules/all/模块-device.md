@@ -11,9 +11,9 @@
 # JS
 
 
-``` bash
-npm install @zkty-team/com-zkty-module-device
-```
+`
+com.zkty.module.device
+`
 
 
 
@@ -26,7 +26,7 @@ npm install @zkty-team/com-zkty-module-device
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getSystemVersion
@@ -38,7 +38,7 @@ npm install @zkty-team/com-zkty-module-device
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getUDID
@@ -50,7 +50,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getBatteryLevel
@@ -62,7 +62,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getPreferredLanguage
@@ -74,7 +74,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getScreenWidth
@@ -86,7 +86,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getScreenHeight
@@ -98,7 +98,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getSafeAreaTop
@@ -110,7 +110,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getSafeAreaBottom
@@ -122,7 +122,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getSafeAreaLeft
@@ -134,7 +134,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getSafeAreaRight
@@ -146,7 +146,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getStatusHeight
@@ -158,7 +158,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getNavigationHeight
@@ -170,7 +170,7 @@ UDID
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
 
 ## getTabBarHeight
@@ -182,7 +182,7 @@ tabBar高度
 
 | name                        | type      | optional | default   | comment  |
 | --------------------------- | --------- | -------- | --------- |--------- |
-| \_\_event\_\_ | string |  |  |  |
+| \_\_event\_\_ |  |  | (string)=>{} | 回调方法 |
 
     
 
