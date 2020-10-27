@@ -179,7 +179,7 @@ xEngine.showMicroApp({microAppId},{version},{args},{microAppName})
 ## 微应用 zip 下载地址
 
 ```
-GET: {offlineServerUrl}/app/{appId}/{microAppId}.{version}.zip?key=md5(appSecret+microAppId+version)&engine_build=1
+GET: {offlineServerUrl}/app/{appId}/{microAppId}.{version}.zip?key=md5(appSecret+microAppId+version)
 
 ```
 
@@ -187,7 +187,7 @@ GET: {offlineServerUrl}/app/{appId}/{microAppId}.{version}.zip?key=md5(appSecret
 
 示例:
 
-http://192.168.3.129:8000/app/com.zkty.xiaoqu/com.zkty.xiaoqu.opendoor.1.zip?key=1f2414c23a7d55dddc11caa32a8e9a4a&engine_build=1
+http://192.168.3.129:8000/app/com.zkty.xiaoqu/com.zkty.xiaoqu.opendoor.1.zip?key=1f2414c23a7d55dddc11caa32a8e9a4a
 
  
 
