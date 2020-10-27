@@ -191,7 +191,7 @@ http://192.168.3.129:8000/app/com.zkty.xiaoqu/com.zkty.xiaoqu.opendoor.1.zip?key
 
  
 
-engine_build 为引擎 build 号. 由引擎 sdk 暴露获取方法. engine_build 为一个数字.
+
 
 
 
